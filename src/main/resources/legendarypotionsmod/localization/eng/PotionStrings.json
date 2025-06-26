@@ -3,8 +3,8 @@
     "NAME": "Bottled Echo Form",
     "DESCRIPTIONS": [
       "Add #b%d #yEcho #yForm",
-      " to your hand. It costs 0 this turn.",
-      "s to your hand. They cost 0 this turn."
+      " to your hand. It costs #b0 this turn.",
+      "s to your hand. They cost #b0 this turn."
     ]
   }
 }
