@@ -28,5 +28,13 @@
       " potion slot (up to a maximum of #b5) then fill all empty potion slots with #yEntropic #yBrews.",
       " potion slots (up to a maximum of #b5) then fill all empty potion slots with #yEntropic #yBrews."
     ]
+  },
+  "legendarypotions:GhostInABottle": {
+    "NAME": "Ghost in a Bottle",
+    "DESCRIPTIONS": [
+      "Gain #b%d #yIntangible and #b%d #yBuffer. ",
+      "If you would die, instead heal to #b40%% of your Max HP and discard this potion.",
+      "If you would die, instead heal to #b80%% of your Max HP and discard this potion."
+    ]
   }
 }
