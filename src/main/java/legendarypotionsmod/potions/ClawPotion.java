@@ -20,12 +20,12 @@ import static legendarypotionsmod.BasicMod.makeID;
 public class ClawPotion extends BasePotion {
     public static final String ID = makeID(ClawPotion.class.getSimpleName());
 
-    private static final Color LIQUID_COLOR = CardHelper.getColor(30, 138, 18); // light dark green
-    private static final Color HYBRID_COLOR = CardHelper.getColor(24, 87, 17); // dark green
+    private static final Color LIQUID_COLOR = CardHelper.getColor(58, 223, 232); // light blue
+    private static final Color HYBRID_COLOR = CardHelper.getColor(24, 120, 125); // darker blue
     private static final Color SPOTS_COLOR = null;
 
     public ClawPotion() {
-        super(ID, 2, PotionRarity.PLACEHOLDER, PotionSize.H, LIQUID_COLOR, HYBRID_COLOR, SPOTS_COLOR);
+        super(ID, 2, PotionRarity.PLACEHOLDER, PotionSize.S, LIQUID_COLOR, HYBRID_COLOR, SPOTS_COLOR);
         isThrown = true;
     }
 
