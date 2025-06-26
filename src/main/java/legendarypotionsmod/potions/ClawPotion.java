@@ -26,7 +26,6 @@ public class ClawPotion extends BasePotion {
 
     public ClawPotion() {
         super(ID, 2, PotionRarity.PLACEHOLDER, PotionSize.S, LIQUID_COLOR, HYBRID_COLOR, SPOTS_COLOR);
-        isThrown = true;
     }
 
     @Override

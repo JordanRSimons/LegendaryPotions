@@ -20,5 +20,13 @@
       "Exhaust your hand. Add #b",
       " #yClaws to your hand for each card exhausted."
     ]
+  },
+  "legendarypotions:BottledEntropy": {
+    "NAME": "Bottled Entropy",
+    "DESCRIPTIONS": [
+      "Gain #b",
+      " potion slot (up to a maximum of #b5) then fill all empty potion slots with #yEntropic #yBrews.",
+      " potion slots (up to a maximum of #b5) then fill all empty potion slots with #yEntropic #yBrews."
+    ]
   }
 }

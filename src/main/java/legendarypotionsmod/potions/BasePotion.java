@@ -50,6 +50,10 @@ public abstract class BasePotion extends AbstractPotion {
         initializeData();
     }
 
+    public BasePotion(String id, String name, PotionRarity rarity, PotionSize size, PotionEffect effect, Color liquidColor, Color hybridColor, Color spotsColor) {
+        super(name, id, rarity, size, effect, liquidColor, hybridColor, spotsColor);
+    }
+
     protected void checkColors() {
         if (hybridColor != null && getHybridImg() == null) {
             throw new RuntimeException("Potion " + ID + " has hybridColor but no hybridImg; if this is intentional, override checkColors. Otherwise, set hybridColor to null or provide a Texture with setHybridImg.");
