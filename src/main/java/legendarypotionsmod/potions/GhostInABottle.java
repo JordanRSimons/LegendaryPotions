@@ -45,16 +45,33 @@ public class GhostInABottle extends BasePotion {
         // Potion is consumed and removed automatically
     }
 
-    // Let player choose to drink or save
+    @Override
+    public boolean onPlayerDeath() {
+        AbstractPlayer p = AbstractDungeon.player;
+
+        float percent = (this.potency == 1) ? 0.4f : 0.8f;
+        int healAmt = (int)(p.maxHealth * percent);
+        if (healAmt < 1) healAmt = 1;
+
+        p.heal(healAmt, true);
+
+        // Remove the potion from the player's belt
+        AbstractDungeon.topPanel.destroyPotion(this.slot);
+
+        // Prevent death
+        return false;
+    }
+
+   /* // Let player choose to drink or save
     @Override
     public boolean canUse() {
         // Always true, let player drink it anytime
         return true;
-    }
+    } */
 
     // This method triggers when the player takes damage and the potion is still in the belt
 
-    public int onLoseHp(int damageAmount) {
+    /* public int onLoseHp(int damageAmount) {
         AbstractPlayer p = AbstractDungeon.player;
 
         if (p.currentHealth - damageAmount <= 0) {
@@ -78,7 +95,7 @@ public class GhostInABottle extends BasePotion {
             return 0;
         }
         return damageAmount;
-    }
+    } */
 }
 
 
