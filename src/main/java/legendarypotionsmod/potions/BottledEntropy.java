@@ -65,9 +65,6 @@ public class BottledEntropy extends BasePotion {
                 for (int i = 0; i < p.potionSlots; i++) {
                     if (p.potions.get(i) instanceof PotionSlot) {
                         p.obtainPotion(i, new EntropicBrew());
-
-                        // Add obtain animation!
-                        AbstractDungeon.topLevelEffects.add(new PotionBounce(p, i));
                     }
                 }
                 isDone = true;
