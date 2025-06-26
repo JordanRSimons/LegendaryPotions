@@ -38,14 +38,13 @@ public class GhostInABottle extends BasePotion {
     public void use(AbstractCreature target) {
         AbstractPlayer p = AbstractDungeon.player;
 
-        // Apply immediate buffs
         addToBot(new ApplyPowerAction(p, p, new IntangiblePlayerPower(p, potency), potency));
         addToBot(new ApplyPowerAction(p, p, new BufferPower(p, potency), potency));
+        addToBot(new ApplyPowerAction(p, p, new HealOnNextDamagePower(p, potency), potency));
 
-        // Potion is consumed and removed automatically
     }
 
-    @Override
+    /*@Override
     public boolean onPlayerDeath() {
         AbstractPlayer p = AbstractDungeon.player;
 
@@ -60,41 +59,6 @@ public class GhostInABottle extends BasePotion {
 
         // Prevent death
         return false;
-    }
-
-   /* // Let player choose to drink or save
-    @Override
-    public boolean canUse() {
-        // Always true, let player drink it anytime
-        return true;
-    } */
-
-    // This method triggers when the player takes damage and the potion is still in the belt
-
-    /* public int onLoseHp(int damageAmount) {
-        AbstractPlayer p = AbstractDungeon.player;
-
-        if (p.currentHealth - damageAmount <= 0) {
-            flash();
-
-            // Calculate heal amount based on potency
-            float percent = (potency == 1) ? 0.4f : 0.8f;
-            int healAmt = (int) (p.maxHealth * percent);
-            if (healAmt < 1) healAmt = 1;
-
-            // Heal the player and prevent death
-            AbstractDungeon.actionManager.addToTop(new HealAction(p, p, healAmt));
-
-            // Remove this potion from belt (visually)
-            int slot = p.potions.indexOf(this);
-            if (slot >= 0) {
-                AbstractDungeon.topPanel.destroyPotion(slot);
-            }
-
-            // Return 0 so player doesn’t actually lose HP
-            return 0;
-        }
-        return damageAmount;
     } */
 }
 
