@@ -1,6 +1,7 @@
 package legendarypotionsmod.potions;
 
 import com.badlogic.gdx.graphics.Color;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -46,26 +47,28 @@ public class BottledEntropy extends BasePotion {
     public void use(AbstractCreature target) {
         AbstractPlayer p = AbstractDungeon.player;
 
-        // Step 1: Gain potion slots (capped at 5)
-        int maxAllowed = 5;
-        int newMax = Math.min(p.potionSlots + potency, maxAllowed);
-        int slotsToAdd = newMax - p.potionSlots;
+        int maxSlots = 5;
+        int slotsToAdd = Math.min(potency, maxSlots - p.potionSlots);
 
         if (slotsToAdd > 0) {
             p.potionSlots += slotsToAdd;
-
-            // Add nulls to the potions list for new empty slots
             for (int i = 0; i < slotsToAdd; i++) {
                 p.potions.add(null);
             }
         }
 
-        // Step 2: Fill all empty slots with Entropic Brew
-        for (int i = 0; i < p.potionSlots; i++) {
-            if (p.potions.get(i) == null) {
-                p.obtainPotion(i, new EntropicBrew());
+        // Delay filling until after this potion disappears
+        addToBot(new AbstractGameAction() {
+            @Override
+            public void update() {
+                for (int i = 0; i < p.potionSlots; i++) {
+                    if (p.potions.get(i) == null) {
+                        p.obtainPotion(i, new EntropicBrew());
+                    }
+                }
+                isDone = true;
             }
-        }
+        });
     }
 }
 
