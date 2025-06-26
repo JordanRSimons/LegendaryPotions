@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.potions.EntropicBrew;
+import com.megacrit.cardcrawl.potions.PotionSlot;
 
 import static legendarypotionsmod.BasicMod.makeID;
 
@@ -53,16 +54,15 @@ public class BottledEntropy extends BasePotion {
         if (slotsToAdd > 0) {
             p.potionSlots += slotsToAdd;
             for (int i = 0; i < slotsToAdd; i++) {
-                p.potions.add(null);
+                p.potions.add(new PotionSlot(p.potions.size()));
             }
         }
 
-        // Delay filling until after this potion disappears
         addToBot(new AbstractGameAction() {
             @Override
             public void update() {
                 for (int i = 0; i < p.potionSlots; i++) {
-                    if (p.potions.get(i) == null) {
+                    if (p.potions.get(i) instanceof PotionSlot) {
                         p.obtainPotion(i, new EntropicBrew());
                     }
                 }
