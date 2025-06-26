@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.powers.BufferPower;
+import com.megacrit.cardcrawl.powers.IntangiblePlayerPower;
 import com.megacrit.cardcrawl.powers.IntangiblePower;
 
 import static legendarypotionsmod.BasicMod.makeID;
@@ -38,7 +39,7 @@ public class GhostInABottle extends BasePotion {
         AbstractPlayer p = AbstractDungeon.player;
 
         // Apply immediate buffs
-        addToBot(new ApplyPowerAction(p, p, new IntangiblePower(p, potency), potency));
+        addToBot(new ApplyPowerAction(p, p, new IntangiblePlayerPower(p, potency), potency));
         addToBot(new ApplyPowerAction(p, p, new BufferPower(p, potency), potency));
 
         // Potion is consumed and removed automatically
