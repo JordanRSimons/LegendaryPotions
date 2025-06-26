@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.cards.blue.Claw;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -33,42 +34,24 @@ public class ClawPotion extends BasePotion {
         return DESCRIPTIONS[0]  + potency + DESCRIPTIONS[1];
     }
 
+
+    @Override
     public void use(AbstractCreature target) {
         if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
             AbstractPlayer p = AbstractDungeon.player;
+            int count = p.hand.size();
 
-            // Open selection screen — allow selection of any number of cards
-            AbstractDungeon.gridSelectScreen.open(
-                    new ArrayList<>(p.hand.group),
-                    99, // max selectable — 99 is functionally "any number"
-                    "Select cards to exhaust.",
-                    false,
-                    true,  // can pick 0 cards
-                    false,
-                    false
-            );
+            // Copy hand to avoid modification while iterating
+            ArrayList<AbstractCard> handCopy = new ArrayList<>(p.hand.group);
 
-            // Queue a follow-up action to exhaust and reward
-            AbstractDungeon.actionManager.addToBottom(new AbstractGameAction() {
-                @Override
-                public void update() {
-                    if (!AbstractDungeon.gridSelectScreen.selectedCards.isEmpty()) {
-                        int count = AbstractDungeon.gridSelectScreen.selectedCards.size();
+            for (AbstractCard card : handCopy) {
+                addToBot(new ExhaustSpecificCardAction(card, p.hand));
+            }
 
-                        for (AbstractCard card : AbstractDungeon.gridSelectScreen.selectedCards) {
-                            p.hand.moveToExhaustPile(card);
-                        }
-
-                        for (int i = 0; i < count * potency; i++) {
-                            addToTop(new MakeTempCardInHandAction(new Claw(), 1, false));
-                        }
-
-                        AbstractDungeon.gridSelectScreen.selectedCards.clear();
-                    }
-
-                    isDone = true;
-                }
-            });
+            // Add 2 × potency Claws per exhausted card
+            for (int i = 0; i < count * potency; i++) {
+                addToBot(new MakeTempCardInHandAction(new Claw(), 1, false));
+            }
         }
     }
 }
