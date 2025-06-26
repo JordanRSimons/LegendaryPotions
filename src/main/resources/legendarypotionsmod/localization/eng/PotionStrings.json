@@ -1,5 +1,5 @@
 {
-  "$legendarypotions:EchoPotion": {
+  "legendarypotions:EchoPotion": {
     "NAME": "Bottled Echo Form",
     "DESCRIPTIONS": [
       "Add #b%d #yEcho #yForm",

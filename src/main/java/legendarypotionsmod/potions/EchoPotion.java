@@ -16,7 +16,7 @@ public class EchoPotion extends BasePotion {
 
     private static final Color LIQUID_COLOR = CardHelper.getColor(255, 0, 255);
     private static final Color HYBRID_COLOR = CardHelper.getColor(255, 0, 255);
-    private static final Color SPOTS_COLOR = CardHelper.getColor(255, 0, 255);
+    private static final Color SPOTS_COLOR = null;
 
     public EchoPotion() {
         super(ID, 1, PotionRarity.PLACEHOLDER, PotionSize.MOON, LIQUID_COLOR, HYBRID_COLOR, SPOTS_COLOR);
