@@ -10,7 +10,8 @@
   "legendarypotions:LethargicBrew": {
     "NAME": "Lethargic Brew",
     "DESCRIPTIONS": [
-      "Apply #ySlow to ALL enemies that don't already have it."
+      "Apply #ySlow to ALL enemies that don't already have it. Add #b",
+      " #yMiracles to your hand."
     ]
   }
 }

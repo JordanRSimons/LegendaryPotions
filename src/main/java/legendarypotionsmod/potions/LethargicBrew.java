@@ -2,6 +2,9 @@ package legendarypotionsmod.potions;
 
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.tempCards.Miracle;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardHelper;
@@ -19,13 +22,13 @@ public class LethargicBrew extends BasePotion {
     private static final Color SPOTS_COLOR = null;
 
     public LethargicBrew() {
-        super(ID, 0, PotionRarity.PLACEHOLDER, PotionSize.H, LIQUID_COLOR, HYBRID_COLOR, SPOTS_COLOR);
+        super(ID, 2, PotionRarity.PLACEHOLDER, PotionSize.H, LIQUID_COLOR, HYBRID_COLOR, SPOTS_COLOR);
         isThrown = true;
     }
 
     @Override
     public String getDescription() {
-        return DESCRIPTIONS[0];
+        return DESCRIPTIONS[0]  + potency + DESCRIPTIONS[1];
     }
 
     @Override
@@ -35,6 +38,12 @@ public class LethargicBrew extends BasePotion {
                 if (!monster.hasPower(SlowPower.POWER_ID)) {
                     addToBot(new ApplyPowerAction(monster, AbstractDungeon.player, new SlowPower(monster, 0), 0));
                 }
+            }
+
+            // Add 2 * potency Miracle cards to hand
+            for (int i = 0; i < potency; i++) {
+                AbstractCard miracle = new Miracle().makeCopy();
+                addToBot(new MakeTempCardInHandAction(miracle, 1, false));
             }
         }
     }
