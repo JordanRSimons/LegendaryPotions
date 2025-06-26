@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.potions.EntropicBrew;
 import com.megacrit.cardcrawl.potions.PotionSlot;
 
+
 import static legendarypotionsmod.BasicMod.makeID;
 
 public class BottledEntropy extends BasePotion {
@@ -25,7 +26,7 @@ public class BottledEntropy extends BasePotion {
     //}
 
     public BottledEntropy() {
-        super(ID, "Bottled Entropy", PotionRarity.PLACEHOLDER, PotionSize.M, PotionEffect.RAINBOW, Color.WHITE, null, null);
+        super(ID, "Bottled Entropy", PotionRarity.PLACEHOLDER, PotionSize.EYE, PotionEffect.RAINBOW, Color.WHITE, null, null);
         isThrown = false;
         targetRequired = false;
     }
@@ -64,6 +65,9 @@ public class BottledEntropy extends BasePotion {
                 for (int i = 0; i < p.potionSlots; i++) {
                     if (p.potions.get(i) instanceof PotionSlot) {
                         p.obtainPotion(i, new EntropicBrew());
+
+                        // Add obtain animation!
+                        AbstractDungeon.topLevelEffects.add(new PotionBounce(p, i));
                     }
                 }
                 isDone = true;
