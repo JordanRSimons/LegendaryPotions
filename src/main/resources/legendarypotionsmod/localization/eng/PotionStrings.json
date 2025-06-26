@@ -13,5 +13,12 @@
       "Apply #ySlow to ALL enemies that don't already have it. Add #b",
       " #yMiracles to your hand."
     ]
+  },
+  "legendarypotions:ClawPotion": {
+    "NAME": "Claw-nic",
+    "DESCRIPTIONS": [
+      "Exhaust your hand. Add #b",
+      " #yClaws to your hand for each card exhausted."
+    ]
   }
 }
