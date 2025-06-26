@@ -1,10 +1,16 @@
 {
   "legendarypotions:EchoPotion": {
-    "NAME": "Bottled Echo Form",
+    "NAME": "Bottled Echoes",
     "DESCRIPTIONS": [
       "Add #b%d #yEcho #yForm",
       " to your hand. It costs #b0 this turn.",
       "s to your hand. They cost #b0 this turn."
+    ]
+  },
+  "legendarypotions:LethargicBrew": {
+    "NAME": "Lethargic Brew",
+    "DESCRIPTIONS": [
+      "Apply #ySlow to ALL enemies that don't already have it."
     ]
   }
 }
