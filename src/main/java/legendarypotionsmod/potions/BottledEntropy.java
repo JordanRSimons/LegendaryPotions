@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.potions.EntropicBrew;
 import com.megacrit.cardcrawl.potions.PotionSlot;
+import com.megacrit.cardcrawl.vfx.ObtainPotionEffect;
 
 
 import static legendarypotionsmod.BasicMod.makeID;
@@ -65,6 +66,9 @@ public class BottledEntropy extends BasePotion {
                 for (int i = 0; i < p.potionSlots; i++) {
                     if (p.potions.get(i) instanceof PotionSlot) {
                         p.obtainPotion(i, new EntropicBrew());
+
+                        AbstractDungeon.topLevelEffects.add(new ObtainPotionEffect(p.potions.get(i)));
+
                     }
                 }
                 isDone = true;
