@@ -14,12 +14,12 @@ import static legendarypotionsmod.BasicMod.makeID;
 public class EchoPotion extends BasePotion {
     public static final String ID = makeID(EchoPotion.class.getSimpleName());
 
-    private static final Color LIQUID_COLOR = CardHelper.getColor(255, 0, 255);
-    private static final Color HYBRID_COLOR = CardHelper.getColor(255, 0, 255);
+    private static final Color LIQUID_COLOR = CardHelper.getColor(58, 223, 232); // light blue
+    private static final Color HYBRID_COLOR = CardHelper.getColor(24, 120, 125); // darker blue
     private static final Color SPOTS_COLOR = null;
 
     public EchoPotion() {
-        super(ID, 1, PotionRarity.PLACEHOLDER, PotionSize.MOON, LIQUID_COLOR, HYBRID_COLOR, SPOTS_COLOR);
+        super(ID, 1, PotionRarity.PLACEHOLDER, PotionSize.EYE, LIQUID_COLOR, HYBRID_COLOR, SPOTS_COLOR);
     }
 
     @Override
