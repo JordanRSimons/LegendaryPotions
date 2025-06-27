@@ -1,9 +1,11 @@
 package legendarypotionsmod.potions;
 
 import com.badlogic.gdx.graphics.Color;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.blue.EchoForm;
+import com.megacrit.cardcrawl.cards.blue.SelfRepair;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardHelper;
@@ -25,9 +27,9 @@ public class EchoPotion extends BasePotion {
     @Override
     public String getDescription() {
         if (potency == 1) {
-            return String.format(DESCRIPTIONS[0], potency) + DESCRIPTIONS[1];
+            return String.format(DESCRIPTIONS[0], potency) + String.format(DESCRIPTIONS[1], potency);
         } else {
-            return String.format(DESCRIPTIONS[0], potency) + DESCRIPTIONS[2];
+            return String.format(DESCRIPTIONS[0], potency) + String.format(DESCRIPTIONS[2], potency);
         }
     }
 
@@ -38,6 +40,10 @@ public class EchoPotion extends BasePotion {
                 AbstractCard echoForm = new EchoForm().makeCopy();
                 echoForm.setCostForTurn(0);
                 addToBot(new MakeTempCardInHandAction(echoForm, 1, false));
+
+                AbstractCard selfRepair = new SelfRepair();
+                selfRepair.upgrade();  // Make it Self Repair+
+                addToBot(new MakeTempCardInDiscardAction(selfRepair, 1));
             }
         }
     }

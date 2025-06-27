@@ -3,8 +3,8 @@
     "NAME": "Bottled Echoes",
     "DESCRIPTIONS": [
       "Add #b%d #yEcho #yForm",
-      " to your hand. It costs #b0 this turn.",
-      "s to your hand. They cost #b0 this turn."
+      " to your hand. It costs #b0 this turn. Add #b%d #ySelf #yRepair to your discard pile.",
+      "s to your hand. They cost #b0 this turn. Add #b%d #ySelf #yRepair to your discard pile."
     ]
   },
   "legendarypotions:LethargicBrew": {
