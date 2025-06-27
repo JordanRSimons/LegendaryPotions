@@ -23,33 +23,19 @@ public class ReplacePotionsUC extends BaseRelic {
     public void onEquip() {
         ArrayList<AbstractPotion> potionsToReplace = new ArrayList<>();
 
-        // Debug: show potion info per slot
-        System.out.println("[ReplacePotionsUC] Checking current potions:");
-
-        for (int i = 0; i < AbstractDungeon.player.potionSlots; i++) {
-            AbstractPotion potion = AbstractDungeon.player.potions.get(i);
-
-            if (potion == null) {
-                System.out.println("  Slot " + i + ": null");
-            } else {
-                System.out.println("  Slot " + i + ": " + potion.ID + ", isObtained=" + potion.isObtained);
-            }
-
-            // Only add potions that are obtained and not empty placeholder
-            if (potion != null && potion.isObtained && !potion.ID.equals("Empty")) {
+        // Collect only real obtained potions (exclude placeholders like "Potion Slot")
+        for (AbstractPotion potion : AbstractDungeon.player.potions) {
+            if (potion != null && potion.isObtained && !potion.ID.equals("Potion Slot")) {
                 potionsToReplace.add(potion);
             }
         }
 
-        System.out.println("[ReplacePotionsUC] Removing " + potionsToReplace.size() + " potions and replacing with legendary potions.");
-
-        // Remove all potions to be replaced
-        // Remove all potions to be replaced
+        // Remove those potions
         for (AbstractPotion potion : potionsToReplace) {
             AbstractDungeon.player.removePotion(potion);
         }
 
-        // Add legendary potions equal to how many were removed
+        // Add a random legendary potion for each potion removed
         for (int i = 0; i < potionsToReplace.size(); i++) {
             try {
                 Class<? extends AbstractPotion> potionClass = LegendaryPotionPool.getRandomLegendaryPotion();
