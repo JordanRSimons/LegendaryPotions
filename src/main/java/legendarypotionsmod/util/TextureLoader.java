@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import java.util.HashMap;
 import java.util.Locale;
 
-import static legendarypotionsmod.BasicMod.*;
+import static legendarypotionsmod.legendarypotions.*;
 
 public class TextureLoader {
     private static final HashMap<String, Texture> textures = new HashMap<>();

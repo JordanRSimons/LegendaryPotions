@@ -1,11 +1,9 @@
 package legendarypotionsmod.potions;
 
 import com.badlogic.gdx.graphics.Color;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.cards.blue.Claw;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -15,7 +13,7 @@ import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 import java.util.ArrayList;
 
-import static legendarypotionsmod.BasicMod.makeID;
+import static legendarypotionsmod.legendarypotions.makeID;
 
 public class ClawPotion extends BasePotion {
     public static final String ID = makeID(ClawPotion.class.getSimpleName());

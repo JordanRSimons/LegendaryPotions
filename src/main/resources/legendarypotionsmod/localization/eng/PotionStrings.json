@@ -3,8 +3,8 @@
     "NAME": "Lost Echoes",
     "DESCRIPTIONS": [
       "Add #b%d #yEcho #yForm",
-      " to your hand. It costs #b0 this turn. Add #b%d #ySelf #yRepair to your discard pile.",
-      "s to your hand. They cost #b0 this turn. Add #b%d #ySelf #yRepairs to your discard pile."
+      " to your hand. It costs #b0 this turn. Add #b%d upgraded #ySelf #yRepair to your discard pile.",
+      "s to your hand. They cost #b0 this turn. Add #b%d upgraded #ySelf #yRepairs to your discard pile."
     ]
   },
   "legendarypotions:LethargicBrew": {

@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
-import static legendarypotionsmod.BasicMod.makeID;
+import static legendarypotionsmod.legendarypotions.makeID;
 
 public class EchoPotion extends BasePotion {
     public static final String ID = makeID(EchoPotion.class.getSimpleName());

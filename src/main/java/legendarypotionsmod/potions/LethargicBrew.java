@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.SlowPower;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
-import static legendarypotionsmod.BasicMod.makeID;
+import static legendarypotionsmod.legendarypotions.makeID;
 
 public class LethargicBrew extends BasePotion {
     public static final String ID = makeID(LethargicBrew.class.getSimpleName());

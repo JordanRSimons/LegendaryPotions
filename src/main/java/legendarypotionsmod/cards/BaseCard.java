@@ -3,7 +3,7 @@ package legendarypotionsmod.cards;
 import basemod.BaseMod;
 import basemod.abstracts.CustomCard;
 import basemod.abstracts.DynamicVariable;
-import legendarypotionsmod.BasicMod;
+import legendarypotionsmod.legendarypotions;
 import legendarypotionsmod.util.CardStats;
 import legendarypotionsmod.util.TriFunction;
 import com.badlogic.gdx.graphics.Color;
@@ -25,7 +25,7 @@ import static legendarypotionsmod.util.TextureLoader.getCardTextureString;
 public abstract class BaseCard extends CustomCard {
     final private static Map<String, DynamicVariable> customVars = new HashMap<>();
 
-    protected static String makeID(String name) { return BasicMod.makeID(name); }
+    protected static String makeID(String name) { return legendarypotions.makeID(name); }
     protected CardStrings cardStrings;
 
     protected boolean upgradesDescription;
@@ -457,7 +457,7 @@ public abstract class BaseCard extends CustomCard {
             {
                 if (cardStrings.UPGRADE_DESCRIPTION == null)
                 {
-                    BasicMod.logger.error("Card " + cardID + " upgrades description and has null upgrade description.");
+                    legendarypotions.logger.error("Card " + cardID + " upgrades description and has null upgrade description.");
                 }
                 else
                 {

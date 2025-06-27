@@ -5,13 +5,12 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.potions.EntropicBrew;
 import com.megacrit.cardcrawl.potions.PotionSlot;
 import com.megacrit.cardcrawl.vfx.ObtainPotionEffect;
 
 
-import static legendarypotionsmod.BasicMod.makeID;
+import static legendarypotionsmod.legendarypotions.makeID;
 
 public class BottledEntropy extends BasePotion {
     public static final String ID = makeID(BottledEntropy.class.getSimpleName());

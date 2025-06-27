@@ -1,19 +1,16 @@
 package legendarypotionsmod.potions;
 
 import com.badlogic.gdx.graphics.Color;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.blue.EchoForm;
-import com.megacrit.cardcrawl.cards.blue.SelfRepair;
 import com.megacrit.cardcrawl.cards.purple.Omniscience;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
-import static legendarypotionsmod.BasicMod.makeID;
+import static legendarypotionsmod.legendarypotions.makeID;
 
 public class OmniscientPotion extends BasePotion {
     public static final String ID = makeID(OmniscientPotion.class.getSimpleName());
