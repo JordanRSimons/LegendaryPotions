@@ -23,12 +23,12 @@ public class OmniscientPotion extends BasePotion {
     private static final Color SPOTS_COLOR = null;
 
     public OmniscientPotion() {
-        super(ID, 1, PotionRarity.PLACEHOLDER, PotionSize.EYE, LIQUID_COLOR, HYBRID_COLOR, SPOTS_COLOR);
+        super(ID, 1, PotionRarity.PLACEHOLDER, PotionSize.T, LIQUID_COLOR, HYBRID_COLOR, SPOTS_COLOR);
     }
 
     @Override
     public String getDescription() {
-       return String.format(DESCRIPTIONS[0], potency);
+       return String.format(DESCRIPTIONS[0], potency*2);
     }
 
     @Override

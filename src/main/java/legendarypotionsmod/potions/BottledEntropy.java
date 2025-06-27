@@ -40,9 +40,9 @@ public class BottledEntropy extends BasePotion {
     @Override
     public String getDescription() {
         if (potency == 1) {
-            return DESCRIPTIONS[0] + potency*2 + DESCRIPTIONS[1];
+            return DESCRIPTIONS[0] + potency + DESCRIPTIONS[1];
         } else {
-            return DESCRIPTIONS[0] + potency*2 + DESCRIPTIONS[2];
+            return DESCRIPTIONS[0] + potency + DESCRIPTIONS[2];
         }
     }
 

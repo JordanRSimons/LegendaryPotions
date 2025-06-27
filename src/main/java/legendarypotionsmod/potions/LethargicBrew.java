@@ -17,7 +17,7 @@ import static legendarypotionsmod.BasicMod.makeID;
 public class LethargicBrew extends BasePotion {
     public static final String ID = makeID(LethargicBrew.class.getSimpleName());
 
-    private static final Color LIQUID_COLOR = CardHelper.getColor(42, 171, 27); // light dark green 30,138,18
+    private static final Color LIQUID_COLOR = CardHelper.getColor(36, 155, 22); // light dark green 30,138,18
     private static final Color HYBRID_COLOR = CardHelper.getColor(16, 66, 10); // dark green 24,87,17
     private static final Color SPOTS_COLOR = null;
 

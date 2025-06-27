@@ -21,7 +21,7 @@ public class EchoPotion extends BasePotion {
     private static final Color SPOTS_COLOR = null;
 
     public EchoPotion() {
-        super(ID, 1, PotionRarity.PLACEHOLDER, PotionSize.EYE, LIQUID_COLOR, HYBRID_COLOR, SPOTS_COLOR);
+        super(ID, 1, PotionRarity.PLACEHOLDER, PotionSize.T, LIQUID_COLOR, HYBRID_COLOR, SPOTS_COLOR);
     }
 
     @Override
