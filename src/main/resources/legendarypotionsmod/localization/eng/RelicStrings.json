@@ -12,5 +12,12 @@
     "DESCRIPTIONS": [
       "Legendary potions always drop after elite combats."
     ]
+  },
+  "legendarypotions:ReplacePotionsUC": {
+    "NAME": "Artificer's Workbench",
+    "FLAVOR": "Flavor text displayed in detailed relic view.",
+    "DESCRIPTIONS": [
+      "Upon pickup, replace ALL potions with random legendary potions."
+    ]
   }
 }
