@@ -5,5 +5,12 @@
     "DESCRIPTIONS": [
       "Upon pickup, obtain a random legendary potion."
     ]
+  },
+  "legendarypotions:OrangeBeastStatue": {
+    "NAME": "Orange Beast Statue",
+    "FLAVOR": "Flavor text displayed in detailed relic view.",
+    "DESCRIPTIONS": [
+      "Legendary potions always drop after elite combats."
+    ]
   }
 }
