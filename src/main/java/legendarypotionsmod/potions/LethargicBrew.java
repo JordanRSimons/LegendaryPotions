@@ -17,12 +17,12 @@ import static legendarypotionsmod.BasicMod.makeID;
 public class LethargicBrew extends BasePotion {
     public static final String ID = makeID(LethargicBrew.class.getSimpleName());
 
-    private static final Color LIQUID_COLOR = CardHelper.getColor(30, 138, 18); // light dark green
-    private static final Color HYBRID_COLOR = CardHelper.getColor(24, 87, 17); // dark green
+    private static final Color LIQUID_COLOR = CardHelper.getColor(42, 171, 27); // light dark green 30,138,18
+    private static final Color HYBRID_COLOR = CardHelper.getColor(16, 66, 10); // dark green 24,87,17
     private static final Color SPOTS_COLOR = null;
 
     public LethargicBrew() {
-        super(ID, 2, PotionRarity.PLACEHOLDER, PotionSize.H, LIQUID_COLOR, HYBRID_COLOR, SPOTS_COLOR);
+        super(ID, 2, PotionRarity.PLACEHOLDER, PotionSize.MOON, LIQUID_COLOR, HYBRID_COLOR, SPOTS_COLOR);
         isThrown = true;
     }
 
