@@ -3,9 +3,12 @@ package legendarypotionsmod;
 import basemod.AutoAdd;
 import basemod.BaseMod;
 import basemod.interfaces.EditKeywordsSubscriber;
+import basemod.interfaces.EditRelicsSubscriber;
 import basemod.interfaces.EditStringsSubscriber;
 import basemod.interfaces.PostInitializeSubscriber;
+import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import legendarypotionsmod.potions.BasePotion;
+import legendarypotionsmod.relics.BaseRelic;
 import legendarypotionsmod.util.GeneralUtils;
 import legendarypotionsmod.util.KeywordInfo;
 import legendarypotionsmod.util.TextureLoader;
@@ -31,6 +34,7 @@ import java.util.*;
 
 @SpireInitializer
 public class legendarypotions implements
+        EditRelicsSubscriber,
         EditStringsSubscriber,
         EditKeywordsSubscriber,
         PostInitializeSubscriber {
@@ -81,6 +85,24 @@ public class legendarypotions implements
                     //This is an old feature added before having potions determine their own color was possible.
                     BaseMod.addPotion(potion.getClass(), null, null, null, potion.ID, potion.playerClass);
                     //playerClass will make a potion character-specific. By default, it's null and will do nothing.
+                });
+    }
+
+    // Enables adding relics
+    @Override
+    public void receiveEditRelics() { //somewhere in the class
+        new AutoAdd(modID) //Loads files from this mod
+                .packageFilter(BaseRelic.class) //In the same package as this class
+                .any(BaseRelic.class, (info, relic) -> { //Run this code for any classes that extend this class
+                    if (relic.pool != null)
+                        BaseMod.addRelicToCustomPool(relic, relic.pool); //Register a custom character specific relic
+                    else
+                        BaseMod.addRelic(relic, relic.relicType); //Register a shared or base game character specific relic
+
+                    //If the class is annotated with @AutoAdd.Seen, it will be marked as seen, making it visible in the relic library.
+                    //If you want all your relics to be visible by default, just remove this if statement.
+                    if (info.seen)
+                        UnlockTracker.markRelicAsSeen(relic.relicId);
                 });
     }
 
