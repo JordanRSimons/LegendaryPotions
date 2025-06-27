@@ -34,14 +34,24 @@ public class GhostInABottle extends BasePotion {
 
 
     // Called when player tries to drink potion
+
+    private boolean awaitingHeal = false;
+
     @Override
     public void use(AbstractCreature target) {
         AbstractPlayer p = AbstractDungeon.player;
+        int potency = this.potency;
 
         addToBot(new ApplyPowerAction(p, p, new IntangiblePlayerPower(p, potency), potency));
         addToBot(new ApplyPowerAction(p, p, new BufferPower(p, potency), potency));
-        addToBot(new ApplyPowerAction(p, p, new HealOnNextDamagePower(p, potency), potency));
+        awaitingHeal = true;
+    }
 
+    public void onPlayerDealtDamage(int damageAmount) {
+        if (awaitingHeal && damageAmount > 0) {
+            AbstractDungeon.actionManager.addToBottom(new HealAction(AbstractDungeon.player, AbstractDungeon.player, damageAmount));
+            awaitingHeal = false;
+        }
     }
 
     /*@Override
