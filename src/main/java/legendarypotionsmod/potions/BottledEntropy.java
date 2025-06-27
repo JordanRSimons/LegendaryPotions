@@ -27,7 +27,7 @@ public class BottledEntropy extends BasePotion {
     //}
 
     public BottledEntropy() {
-        super(ID, "Bottled Entropy", PotionRarity.PLACEHOLDER, PotionSize.EYE, PotionEffect.RAINBOW, Color.WHITE, null, null);
+        super(ID, "Bottled Entropy", PotionRarity.PLACEHOLDER, PotionSize.BOTTLE, PotionEffect.RAINBOW, Color.WHITE, null, null);
         isThrown = false;
         targetRequired = false;
     }

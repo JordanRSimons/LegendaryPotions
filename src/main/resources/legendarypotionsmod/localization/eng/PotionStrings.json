@@ -1,21 +1,21 @@
 {
   "legendarypotions:EchoPotion": {
-    "NAME": "Bottled Echoes",
+    "NAME": "Lost Echoes",
     "DESCRIPTIONS": [
       "Add #b%d #yEcho #yForm",
       " to your hand. It costs #b0 this turn. Add #b%d #ySelf #yRepair to your discard pile.",
-      "s to your hand. They cost #b0 this turn. Add #b%d #ySelf #yRepair to your discard pile."
+      "s to your hand. They cost #b0 this turn. Add #b%d #ySelf #yRepairs to your discard pile."
     ]
   },
   "legendarypotions:LethargicBrew": {
-    "NAME": "Lethargic Brew",
+    "NAME": "Evening Adrenaline",
     "DESCRIPTIONS": [
       "Apply #ySlow to ALL enemies that don't already have it. Add #b",
       " #yMiracles to your hand."
     ]
   },
   "legendarypotions:ClawPotion": {
-    "NAME": "Claw-nic",
+    "NAME": "Clawnic",
     "DESCRIPTIONS": [
       "Exhaust your hand. Add #b",
       " #yClaws to your hand for each card exhausted."
@@ -29,12 +29,10 @@
       " potion slots (up to a maximum of #b5) then fill all empty potion slots with #yEntropic #yBrews."
     ]
   },
-  "legendarypotions:GhostInABottle": {
-    "NAME": "Ghost in a Bottle",
+  "legendarypotions:OmniscientPotion": {
+    "NAME": "Forgotten Omniscience",
     "DESCRIPTIONS": [
-      "Gain #b%d #yIntangible and #b%d #yBuffer. ",
-      "If you would die, instead heal to #b40% of your Max HP and discard this potion.",
-      "If you would die, instead heal to #b80% of your Max HP and discard this potion."
+      "Add an #yOmniscience+ to your hand and shuffle #b%d more into your draw pile."
     ]
   }
 }
