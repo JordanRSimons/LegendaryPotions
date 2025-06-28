@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.potions.EntropicBrew;
 import com.megacrit.cardcrawl.potions.PotionSlot;
 import com.megacrit.cardcrawl.vfx.ObtainPotionEffect;
@@ -59,7 +60,16 @@ public class BottledEntropy extends BasePotion {
             }
         }
 
-        addToBot(new AbstractGameAction() {
+        // Add only 1 Entropic Brew, even if more slots are empty
+        try {
+            AbstractPotion entropic = new EntropicBrew(); // Replace with your custom class if applicable
+            p.obtainPotion(entropic);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        // nerf applied, this is the old code to fill all slots
+        /*addToBot(new AbstractGameAction() {
             @Override
             public void update() {
                 for (int i = 0; i < p.potionSlots; i++) {
@@ -72,7 +82,7 @@ public class BottledEntropy extends BasePotion {
                 }
                 isDone = true;
             }
-        });
+        });*/
     }
 }
 
