@@ -8,6 +8,9 @@ import com.megacrit.cardcrawl.cards.tempCards.Miracle;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardHelper;
+import com.megacrit.cardcrawl.helpers.GameDictionary;
+import com.megacrit.cardcrawl.helpers.PowerTip;
+import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.SlowPower;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
@@ -47,5 +50,17 @@ public class LethargicBrew extends BasePotion {
             }
         }
     }
+
+    @Override
+    public void addAdditionalTips() {
+
+        // Tooltip for Slow
+        this.tips.add(new PowerTip(
+                "Slow",
+                "Whenever you play a card, the enemy receives #b10% more damage from #yAttacks this turn."
+        ));
+
+    }
+
 
 }

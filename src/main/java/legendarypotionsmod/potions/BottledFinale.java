@@ -11,6 +11,9 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardHelper;
+import com.megacrit.cardcrawl.helpers.GameDictionary;
+import com.megacrit.cardcrawl.helpers.PowerTip;
+import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 import static legendarypotionsmod.legendarypotions.makeID;
@@ -60,4 +63,15 @@ public class BottledFinale extends BasePotion {
             addToBot(new DrawCardAction(p, 2 * potency));
         }
     }
+
+    @Override
+    public void addAdditionalTips() {
+
+        // Tooltip for Scry
+        this.tips.add(new PowerTip(
+                TipHelper.capitalize(GameDictionary.SCRY.NAMES[0]),
+                GameDictionary.keywords.get(GameDictionary.SCRY.NAMES[0])
+        ));
+    }
+
 }
