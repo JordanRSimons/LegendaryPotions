@@ -19,6 +19,7 @@ public class NextChestsUC extends BaseRelic {
 
     public NextChestsUC() {
         super(ID, NAME, RARITY, SOUND);
+        this.counter = 2;
     }
 
     @Override
@@ -45,8 +46,6 @@ public class NextChestsUC extends BaseRelic {
             // Update description and used-up state
             if (this.counter == 0) {
                 setCounter(-2);
-                this.description = this.DESCRIPTIONS[2];
-            } else {
                 this.description = this.DESCRIPTIONS[1];
             }
         }
