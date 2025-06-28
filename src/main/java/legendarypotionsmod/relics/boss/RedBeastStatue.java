@@ -24,23 +24,22 @@ public class RedBeastStatue extends BaseRelic {
     public void onEquip() {
         AbstractPlayer p = AbstractDungeon.player;
 
+        // Make sure there is at least one slot to remove
         if (p.potionSlots > 0) {
-            p.potionSlots--;
+            int lastIndex = p.potionSlots - 1;
 
-            // If a potion exists in the rightmost slot, remove it
-            if (p.potions.size() > p.potionSlots) {
-                AbstractPotion removed = p.potions.get(p.potionSlots);
-                if (removed != null && removed.isObtained) {
-                    p.removePotion(removed);
-                }
+            // If the slot has a potion, mark it as not obtained
+            AbstractPotion potion = p.potions.get(lastIndex);
+            if (potion != null && potion.isObtained) {
+                potion.isObtained = false; // This avoids visual issues
             }
 
-            // Remove the visual slot manually
-            if (p.potions.size() > p.potionSlots) {
-                p.potions.remove(p.potions.size() - 1);
-            }
+            // Remove the visual slot and update the count
+            p.potions.remove(lastIndex); // Remove the last potion slot visually
+            p.potionSlots--; // Reduce max slots
         }
     }
+
 
     private boolean pendingPotion = false; // Flag to delay potion use
 
