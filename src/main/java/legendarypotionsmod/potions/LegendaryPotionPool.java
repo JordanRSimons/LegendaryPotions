@@ -13,7 +13,8 @@ public class LegendaryPotionPool {
                 LethargicBrew.class,
                 ClawPotion.class,
                 BottledEntropy.class,
-                OmniscientPotion.class
+                OmniscientPotion.class,
+                BottledFinale.class
         );
     }
 
