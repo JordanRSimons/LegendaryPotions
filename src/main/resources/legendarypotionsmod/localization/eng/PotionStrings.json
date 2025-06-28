@@ -38,8 +38,8 @@
   "legendarypotions:BottledFinale": {
     "NAME": "Essence of the End",
     "DESCRIPTIONS": [
-      "Add #b%d #yGrand #yFinale to your hand. Scry #b%d, then draw #b%d.",
-      "Add #b%d #yGrand #yFinales to your hand. Scry #b%d, then draw #b%d."
+      "Add #b%d #yGrand #yFinale to your hand. #yScry #b%d then draw #b%d cards.",
+      "Add #b%d #yGrand #yFinales to your hand. #yScry #b%d then draw #b%d cards."
     ]
   }
 }
