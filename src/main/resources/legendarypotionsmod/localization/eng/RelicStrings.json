@@ -34,6 +34,13 @@
     "DESCRIPTIONS": [
       "Use a random legendary potion at the start of every combat. Upon pick up, lose your rightmost potion slot."
     ]
+  },
+  "legendarypotions:NextShopsSH": {
+    "NAME": "Drink Ticket",
+    "FLAVOR": "The Merchant has startlingly good taste.",
+    "DESCRIPTIONS": [
+      "Whenever you enter a shop room, obtain a random legendary potion."
+    ]
   }
 
 }
