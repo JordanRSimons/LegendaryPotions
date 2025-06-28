@@ -3,7 +3,7 @@
     "NAME": "Mysterious Jar",
     "FLAVOR": "Flavor text displayed in detailed relic view.",
     "DESCRIPTIONS": [
-      "Upon pickup, obtain a random legendary potion."
+      "Upon pick up, obtain a random legendary potion."
     ]
   },
   "legendarypotions:OrangeBeastStatue": {
@@ -17,15 +17,22 @@
     "NAME": "Artificer's Workbench",
     "FLAVOR": "Flavor text displayed in detailed relic view.",
     "DESCRIPTIONS": [
-      "Upon pickup, replace ALL potions with random legendary potions."
+      "Upon pick up, replace ALL potions with random legendary potions."
     ]
   },
   "legendarypotions:NextChestsUC": {
     "NAME": "Witch's Doll",
-    "FLAVOR": "Relics are not spooky enough.",
+    "FLAVOR": "Relics aren't spooky enough.",
     "DESCRIPTIONS": [
-      "The next #b2 chests you open will contain a random legendary potion.",
+      "The next #b2 non-Boss chests you open also contain a random legendary potion.",
       "This relic has been used up."
+    ]
+  },
+  "legendarypotions:RedBeastStatue": {
+    "NAME": "Red Beast Statue",
+    "FLAVOR": "Flavor text displayed in detailed relic view.",
+    "DESCRIPTIONS": [
+      "Use a random legendary potion at the start of every combat. Upon pick up, lose your rightmost potion slot."
     ]
   }
 
