@@ -25,8 +25,8 @@
     "NAME": "Evanescent Entropy",
     "DESCRIPTIONS": [
       "Gain #b",
-      " potion slot (up to a maximum of #b5) then fill all empty potion slots with #yEntropic #yBrews.",
-      " potion slots (up to a maximum of #b5) then fill all empty potion slots with #yEntropic #yBrews."
+      " potion slot (up to a maximum of #b5 ) then fill all empty potion slots with #yEntropic #yBrews.",
+      " potion slots (up to a maximum of #b5 ) then fill all empty potion slots with #yEntropic #yBrews."
     ]
   },
   "legendarypotions:OmniscientPotion": {

@@ -19,5 +19,15 @@
     "DESCRIPTIONS": [
       "Upon pickup, replace ALL potions with random legendary potions."
     ]
+  },
+  "legendarypotions:NextChestsUC": {
+    "NAME": "Witch's Doll",
+    "FLAVOR": "Relics are not spooky enough.",
+    "DESCRIPTIONS": [
+      "The next #b2 chests you open will contain a random legendary potion.",
+      "The next chest will contain a random legendary potion.",
+      "This relic has been used up."
+    ]
   }
+
 }

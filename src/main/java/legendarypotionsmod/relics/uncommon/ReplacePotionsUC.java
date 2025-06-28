@@ -1,9 +1,10 @@
-package legendarypotionsmod.relics;
+package legendarypotionsmod.relics.uncommon;
 
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import legendarypotionsmod.potions.LegendaryPotionPool;
+import legendarypotionsmod.relics.BaseRelic;
 
 import java.util.ArrayList;
 
