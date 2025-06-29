@@ -17,7 +17,7 @@
     "NAME": "Witch's Workbench",
     "FLAVOR": "This isn't a cauldron, maybe later...",
     "DESCRIPTIONS": [
-      "Upon pick up, replace ALL potions with random legendary potions."
+      "Upon pick up, remove ALL potions then gain half as many legendary potions, rounded up."
     ]
   },
   "legendarypotions:NextChestsUC": {

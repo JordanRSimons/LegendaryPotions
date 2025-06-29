@@ -37,7 +37,9 @@ public class WitchsWorkbench extends BaseRelic {
         }
 
         // Add a random legendary potion for each potion removed
-        for (int i = 0; i < potionsToReplace.size(); i++) {
+        int legendaryCount = (potionsToReplace.size() + 1) / 2;  // rounds up
+
+        for (int i = 0; i < legendaryCount; i++) {
             try {
                 Class<? extends AbstractPotion> potionClass = LegendaryPotionPool.getRandomLegendaryPotion();
                 AbstractPotion newPotion = potionClass.getDeclaredConstructor().newInstance();
