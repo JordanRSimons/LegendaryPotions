@@ -13,9 +13,9 @@
       "Legendary potions always drop after elite combats."
     ]
   },
-  "legendarypotions:ReplacePotionsUC": {
-    "NAME": "Artificer's Workbench",
-    "FLAVOR": "Flavor text displayed in detailed relic view.",
+  "legendarypotions:WitchsWorkbench": {
+    "NAME": "Witch's Workbench",
+    "FLAVOR": "This isn't a cauldron, maybe later...",
     "DESCRIPTIONS": [
       "Upon pick up, replace ALL potions with random legendary potions."
     ]
@@ -35,7 +35,7 @@
       "Use a random legendary potion at the start of every combat. Upon pick up, lose your rightmost potion slot."
     ]
   },
-  "legendarypotions:NextShopsSH": {
+  "legendarypotions:DrinkTicket": {
     "NAME": "Drink Ticket",
     "FLAVOR": "The Merchant has startlingly good taste.",
     "DESCRIPTIONS": [
