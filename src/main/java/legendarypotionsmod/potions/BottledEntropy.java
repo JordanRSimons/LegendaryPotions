@@ -87,11 +87,25 @@ public class BottledEntropy extends BasePotion {
                 }
             });
         } else {
-            // Outside combat: add slots immediately (since no action queue)
+            // Outside combat: add slots immediately
             if (slotsToAdd > 0) {
                 p.potionSlots += slotsToAdd;
                 for (int i = 0; i < slotsToAdd; i++) {
                     p.potions.add(new PotionSlot(p.potions.size()));
+                }
+            }
+
+            if (p.hasRelic("Sozu")) {
+                p.getRelic("Sozu").flash();
+            }
+
+// Add a very short delay (WaitAction)
+            AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.utility.WaitAction(0.1f));
+
+// Then spawn obtain potion effects for new slots
+            for (int i = 0; i < p.potionSlots; i++) {
+                if (p.potions.get(i) instanceof PotionSlot) {
+                    AbstractDungeon.effectsQueue.add(new ObtainPotionEffect(AbstractDungeon.returnRandomPotion()));
                 }
             }
 
