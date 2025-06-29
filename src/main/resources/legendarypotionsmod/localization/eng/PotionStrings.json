@@ -24,9 +24,9 @@
   "legendarypotions:BottledEntropy": {
     "NAME": "Evanescent Entropy",
     "DESCRIPTIONS": [
-      "Gain #b",
-      " potion slot (up to a maximum of five) and an #yEntropic #yBrew.",
-      " potion slots (up to a maximum of five) and an #yEntropic #yBrew."
+      "While in combat, gain #b",
+      " potion slot (up to a maximum of five) then fill all your empty potion slots with random potions.",
+      " potion slots (up to a maximum of five) then fill all your empty potion slots with random potions."
     ]
   },
   "legendarypotions:OmniscientPotion": {

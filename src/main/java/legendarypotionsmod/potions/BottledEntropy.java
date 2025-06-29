@@ -13,7 +13,6 @@ import com.megacrit.cardcrawl.potions.PotionSlot;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.vfx.ObtainPotionEffect;
 
-
 import static legendarypotionsmod.legendarypotions.makeID;
 
 public class BottledEntropy extends BasePotion {
@@ -22,7 +21,6 @@ public class BottledEntropy extends BasePotion {
     //private static final Color LIQUID_COLOR = CardHelper.getColor(58, 223, 232); // light blue
     //private static final Color HYBRID_COLOR = CardHelper.getColor(24, 120, 125); // darker blue
     //private static final Color SPOTS_COLOR = null;
-
 
     //public BottledEntropy() {
     //super(ID, 1, PotionRarity.PLACEHOLDER, PotionSize.S, LIQUID_COLOR, HYBRID_COLOR, SPOTS_COLOR);
@@ -78,6 +76,7 @@ public class BottledEntropy extends BasePotion {
                         isDone = true;
                         return;
                     }
+
                     for (int i = 0; i < p.potionSlots; i++) {
                         if (p.potions.get(i) instanceof PotionSlot) {
                             addToBot(new ObtainPotionAction(AbstractDungeon.returnRandomPotion(true)));
@@ -87,7 +86,8 @@ public class BottledEntropy extends BasePotion {
                 }
             });
         } else {
-            // Outside combat: add slots immediately
+            // Outside combat: add slots immediately (since no action queue)
+
             if (slotsToAdd > 0) {
                 p.potionSlots += slotsToAdd;
                 for (int i = 0; i < slotsToAdd; i++) {
@@ -99,31 +99,23 @@ public class BottledEntropy extends BasePotion {
                 p.getRelic("Sozu").flash();
             }
 
-            // Add a very short delay to help visuals
+            // Add a very short delay (WaitAction)
             AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.utility.WaitAction(0.1f));
 
-            // The normal fill for newly added empty slots
+            // Then spawn obtain potion effects for new slots
             for (int i = 0; i < p.potionSlots; i++) {
                 if (p.potions.get(i) instanceof PotionSlot) {
                     AbstractDungeon.effectsQueue.add(new ObtainPotionEffect(AbstractDungeon.returnRandomPotion()));
-                    p.potions.set(i, AbstractDungeon.returnRandomPotion());
                 }
             }
 
-            // === Edge case fix: refill used slot if it still contains PotionSlot ===
-            int usedPotionIndex = -1;
-            for (int i = 0; i < p.potionSlots; i++) {
-                if (p.potions.get(i) == this) {
-                    usedPotionIndex = i;
-                    break;
-                }
-            }
-            // Edge case fix: refill used slot if it still contains PotionSlot
-            if (usedPotionIndex >= 0 && usedPotionIndex < p.potionSlots) {
-                if (p.potions.get(usedPotionIndex) instanceof PotionSlot) {
-                    AbstractPotion newPot = AbstractDungeon.returnRandomPotion();
-                    p.obtainPotion(usedPotionIndex, newPot);  // Proper way to replace potion slot
-                    AbstractDungeon.effectsQueue.add(new ObtainPotionEffect(newPot));
+            if (p.hasRelic("Sozu")) {
+                p.getRelic("Sozu").flash();
+            } else {
+                for (int i = 0; i < p.potionSlots; i++) {
+                    if (p.potions.get(i) instanceof PotionSlot) {
+                        AbstractDungeon.effectsQueue.add(new ObtainPotionEffect(AbstractDungeon.returnRandomPotion()));
+                    }
                 }
             }
         }
@@ -156,9 +148,9 @@ public class BottledEntropy extends BasePotion {
         });*/
     }
 
-    @Override
+    /* @Override
     public boolean canUse() {
         return true;
-    }
-}
+    } */
 
+}
