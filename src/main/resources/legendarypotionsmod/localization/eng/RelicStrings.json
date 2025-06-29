@@ -8,7 +8,7 @@
   },
   "legendarypotions:OrangeBeastStatue": {
     "NAME": "Orange Beast Statue",
-    "FLAVOR": "Flavor text displayed in detailed relic view.",
+    "FLAVOR": "White Beast Statue, but with a more refined taste.",
     "DESCRIPTIONS": [
       "Legendary potions always drop after elite combats."
     ]
@@ -30,7 +30,7 @@
   },
   "legendarypotions:RedBeastStatue": {
     "NAME": "Red Beast Statue",
-    "FLAVOR": "Flavor text displayed in detailed relic view.",
+    "FLAVOR": "White Beast Statue was told he can't be a boss relic. He's angry now.",
     "DESCRIPTIONS": [
       "Use a random legendary potion at the start of every combat. Upon pick up, lose your rightmost potion slot."
     ]
@@ -40,6 +40,13 @@
     "FLAVOR": "The Merchant has startlingly good taste.",
     "DESCRIPTIONS": [
       "Whenever you enter a shop room, obtain a random legendary potion."
+    ]
+  },
+  "legendarypotions:LeadBlock": {
+    "NAME": "Lead Block",
+    "FLAVOR": "They said we could make gold from lead...",
+    "DESCRIPTIONS": [
+      "Whenever you use a potion, gain #b15 #yGold."
     ]
   }
 
