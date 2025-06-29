@@ -62,6 +62,12 @@ public class RedBeastStatue extends BaseRelic {
                         Class<? extends AbstractPotion> potionClass = LegendaryPotionPool.getRandomLegendaryPotion();
                         AbstractPotion potion = potionClass.getDeclaredConstructor().newInstance();
                         potion.use(AbstractDungeon.player);
+
+                        // Trigger relic onUsePotion effects
+                        for (AbstractRelic relic : AbstractDungeon.player.relics) {
+                            relic.onUsePotion();
+                        }
+
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
