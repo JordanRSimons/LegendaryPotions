@@ -99,26 +99,36 @@ public class BottledEntropy extends BasePotion {
                 p.getRelic("Sozu").flash();
             }
 
-// Add a very short delay (WaitAction)
+            // Add a very short delay to help visuals
             AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.utility.WaitAction(0.1f));
 
-// Then spawn obtain potion effects for new slots
+            // The normal fill for newly added empty slots
             for (int i = 0; i < p.potionSlots; i++) {
                 if (p.potions.get(i) instanceof PotionSlot) {
                     AbstractDungeon.effectsQueue.add(new ObtainPotionEffect(AbstractDungeon.returnRandomPotion()));
+                    p.potions.set(i, AbstractDungeon.returnRandomPotion());
                 }
             }
 
-            if (p.hasRelic("Sozu")) {
-                p.getRelic("Sozu").flash();
-            } else {
-                for (int i = 0; i < p.potionSlots; i++) {
-                    if (p.potions.get(i) instanceof PotionSlot) {
-                        AbstractDungeon.effectsQueue.add(new ObtainPotionEffect(AbstractDungeon.returnRandomPotion()));
-                    }
+            // === Edge case fix: refill used slot if it still contains PotionSlot ===
+            int usedPotionIndex = -1;
+            for (int i = 0; i < p.potionSlots; i++) {
+                if (p.potions.get(i) == this) {
+                    usedPotionIndex = i;
+                    break;
+                }
+            }
+            // Edge case fix: refill used slot if it still contains PotionSlot
+            if (usedPotionIndex >= 0 && usedPotionIndex < p.potionSlots) {
+                if (p.potions.get(usedPotionIndex) instanceof PotionSlot) {
+                    AbstractPotion newPot = AbstractDungeon.returnRandomPotion();
+                    p.obtainPotion(usedPotionIndex, newPot);  // Proper way to replace potion slot
+                    AbstractDungeon.effectsQueue.add(new ObtainPotionEffect(newPot));
                 }
             }
         }
+
+
 
         // Add only 1 Entropic Brew, even if more slots are empty
         /*try {
