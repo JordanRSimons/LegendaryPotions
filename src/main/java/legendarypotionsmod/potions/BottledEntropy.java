@@ -2,6 +2,7 @@ package legendarypotionsmod.potions;
 
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -61,9 +62,24 @@ public class BottledEntropy extends BasePotion {
         }
 
         // Add only 1 Entropic Brew, even if more slots are empty
-        try {
+        /*try {
             AbstractPotion entropic = new EntropicBrew(); // Replace with your custom class if applicable
             p.obtainPotion(entropic);
+        } catch (Exception e) {
+            e.printStackTrace();
+        } */
+
+        int targetSlot = this.slot;  // The slot of the current potion
+
+        // Clear the slot manually
+        if (p.potions.get(targetSlot).isObtained) {
+            p.potions.set(targetSlot, new PotionSlot(targetSlot));
+            p.potions.get(targetSlot).isObtained = false;
+        }
+
+        try {
+            AbstractPotion entropic = new EntropicBrew();
+            p.obtainPotion(targetSlot, entropic);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -83,6 +99,11 @@ public class BottledEntropy extends BasePotion {
                 isDone = true;
             }
         });*/
+    }
+
+    @Override
+    public boolean canUse() {
+        return true;
     }
 }
 
