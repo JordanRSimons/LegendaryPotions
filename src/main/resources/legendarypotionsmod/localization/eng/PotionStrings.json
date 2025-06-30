@@ -10,8 +10,9 @@
   "legendarypotions:LethargicBrew": {
     "NAME": "Evening Adrenaline",
     "DESCRIPTIONS": [
-      "Apply #yslow to ALL enemies that don't already have it. Add #b",
-      " #yMiracles to your hand."
+      "Apply #ySlow to ALL enemies that don't already have it. Add #b%d ",
+      "upgraded #yAdrenaline to your hand and shuffle #b%d more into your draw pile.",
+      "upgraded #yAdrenalines to your hand and shuffle #b%d more into your draw pile."
     ]
   },
   "legendarypotions:ClawPotion": {

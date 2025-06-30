@@ -2,8 +2,10 @@ package legendarypotionsmod.potions;
 
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.green.Adrenaline;
 import com.megacrit.cardcrawl.cards.tempCards.Miracle;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -25,13 +27,16 @@ public class LethargicBrew extends BasePotion {
     private static final Color SPOTS_COLOR = null;
 
     public LethargicBrew() {
-        super(ID, 2, PotionRarity.PLACEHOLDER, PotionSize.MOON, LIQUID_COLOR, HYBRID_COLOR, SPOTS_COLOR);
+        super(ID, 1, PotionRarity.PLACEHOLDER, PotionSize.MOON, LIQUID_COLOR, HYBRID_COLOR, SPOTS_COLOR);
         isThrown = true;
     }
 
-    @Override
     public String getDescription() {
-        return DESCRIPTIONS[0]  + potency + DESCRIPTIONS[1];
+        if (potency == 1) {
+            return String.format(DESCRIPTIONS[0], potency) + String.format(DESCRIPTIONS[1], potency*4);
+        } else {
+            return String.format(DESCRIPTIONS[0], potency) + String.format(DESCRIPTIONS[2], potency*4);
+        }
     }
 
     @Override
@@ -45,8 +50,10 @@ public class LethargicBrew extends BasePotion {
 
             // Add 2 * potency Miracle cards to hand
             for (int i = 0; i < potency; i++) {
-                AbstractCard miracle = new Miracle().makeCopy();
-                addToBot(new MakeTempCardInHandAction(miracle, 1, false));
+                AbstractCard adrenaline = new Adrenaline().makeCopy();
+                adrenaline.upgrade();
+                addToBot(new MakeTempCardInHandAction(adrenaline, 1, false));
+                addToBot(new MakeTempCardInDrawPileAction(adrenaline, 4, true, true));
             }
         }
     }
