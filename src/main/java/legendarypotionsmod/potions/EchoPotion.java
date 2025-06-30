@@ -42,7 +42,6 @@ public class EchoPotion extends BasePotion {
                 addToBot(new MakeTempCardInHandAction(echoForm, 1, false));
 
                 AbstractCard selfRepair = new SelfRepair();
-                selfRepair.upgrade();  // Make it Self Repair+
                 addToBot(new MakeTempCardInDiscardAction(selfRepair, 1));
             }
         }

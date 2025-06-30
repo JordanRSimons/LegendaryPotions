@@ -20,7 +20,7 @@ public class RedBeastStatue extends BaseRelic {
         super(ID, NAME, RARITY, SOUND);
     }
 
-    @Override
+    /* @Override
     public void onEquip() {
         AbstractPlayer p = AbstractDungeon.player;
 
@@ -38,7 +38,7 @@ public class RedBeastStatue extends BaseRelic {
             p.potions.remove(lastIndex); // Remove the last potion slot visually
             p.potionSlots--; // Reduce max slots
         }
-    }
+    } */
 
 
     private boolean pendingPotion = false; // Flag to delay potion use
