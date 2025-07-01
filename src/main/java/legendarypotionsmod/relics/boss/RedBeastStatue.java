@@ -40,6 +40,17 @@ public class RedBeastStatue extends BaseRelic {
         }
     } */
 
+    // Reduces total energy to 2
+    @Override
+    public void onEquip() {
+        AbstractDungeon.player.energy.energyMaster--;
+    }
+
+    @Override
+    public void onUnequip() {
+        AbstractDungeon.player.energy.energyMaster++;
+    }
+
 
     private boolean pendingPotion = false; // Flag to delay potion use
 
