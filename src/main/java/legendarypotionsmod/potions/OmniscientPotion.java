@@ -23,9 +23,12 @@ public class OmniscientPotion extends BasePotion {
         super(ID, 1, PotionRarity.PLACEHOLDER, PotionSize.T, LIQUID_COLOR, HYBRID_COLOR, SPOTS_COLOR);
     }
 
-    @Override
     public String getDescription() {
-       return String.format(DESCRIPTIONS[0], potency*2);
+        if (potency == 1) {
+            return String.format(DESCRIPTIONS[0], potency, potency);
+        } else {
+            return String.format(DESCRIPTIONS[1], potency, potency);
+        }
     }
 
     @Override
@@ -34,10 +37,11 @@ public class OmniscientPotion extends BasePotion {
 
             AbstractCard omniscience = new Omniscience().makeCopy();
             omniscience.upgrade();
-            addToBot(new MakeTempCardInHandAction(omniscience, 1, false));
+            omniscience.setCostForTurn(0);
 
             for (int i = 0; i < potency; i++) {
-                addToBot(new MakeTempCardInDrawPileAction(omniscience, 2, true, true));
+                addToBot(new MakeTempCardInHandAction(omniscience, 1, false));
+                addToBot(new MakeTempCardInDrawPileAction(omniscience, 1, true, true));
             }
         }
     }

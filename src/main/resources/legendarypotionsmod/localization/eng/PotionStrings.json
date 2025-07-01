@@ -33,7 +33,8 @@
   "legendarypotions:OmniscientPotion": {
     "NAME": "Forgotten Omniscience",
     "DESCRIPTIONS": [
-      "Add an #yOmniscience+ to your hand and shuffle #b%d more into your draw pile."
+      "Add #b%d upgraded #b0 cost #yOmniscience to your hand and shuffle #b%d more into your draw pile.",
+      "Add #b%d upgraded #b0 cost #yOmnisciences to your hand and shuffle #b%d more into your draw pile."
     ]
   },
   "legendarypotions:BottledFinale": {
