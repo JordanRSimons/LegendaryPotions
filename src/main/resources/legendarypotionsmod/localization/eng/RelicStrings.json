@@ -48,6 +48,20 @@
     "DESCRIPTIONS": [
       "Whenever you use a potion, gain #b15 #yGold."
     ]
+  },
+  "legendarypotions:ExplosivePowder": {
+    "NAME": "Explosive Powder",
+    "FLAVOR": "Good for a basic potion.",
+    "DESCRIPTIONS": [
+      "Whenever you use a potion, deal #b10 damage to ALL enemies."
+    ]
+  },
+  "legendarypotions:AlchemistsBackpack": {
+    "NAME": "Alchemist's Backpack",
+    "FLAVOR": "Play Packmaster!",
+    "DESCRIPTIONS": [
+      "Whenever you use a potion for the first time each combat, gain [E] and draw #b1 card."
+    ]
   }
 
 }
