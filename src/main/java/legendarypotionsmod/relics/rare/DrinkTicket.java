@@ -28,6 +28,10 @@ public class DrinkTicket extends BaseRelic {
     public void onEnterRoom(com.megacrit.cardcrawl.rooms.AbstractRoom room) {
         if (room instanceof ShopRoom) {
             flash();
+
+            // Subtract 50 gold, but don't let gold go negative
+            AbstractDungeon.player.gold = Math.max(0, AbstractDungeon.player.gold - 50);
+
             try {
                 Class<? extends AbstractPotion> potionClass = LegendaryPotionPool.getRandomLegendaryPotion();
                 AbstractPotion potion = potionClass.getDeclaredConstructor().newInstance();
