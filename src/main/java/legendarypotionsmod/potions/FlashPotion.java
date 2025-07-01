@@ -15,7 +15,7 @@ import static legendarypotionsmod.legendarypotions.makeID;
 public class FlashPotion extends BasePotion {
     public static final String ID = makeID(FlashPotion.class.getSimpleName());
 
-    private static final Color LIQUID_COLOR = CardHelper.getColor(164, 171, 170); // light grey
+    private static final Color LIQUID_COLOR = CardHelper.getColor(209, 206, 123); // sand yellow. light grey 164,171,170
     private static final Color HYBRID_COLOR = CardHelper.getColor(161, 27, 32); // blood red // darker blue
     private static final Color SPOTS_COLOR = null;
 
