@@ -11,10 +11,10 @@ public class LegendaryPotionPool {
         return Arrays.asList(
                 EchoPotion.class,
                 LethargicBrew.class,
-                ClawPotion.class,
                 BottledEntropy.class,
                 OmniscientPotion.class,
-                BottledFinale.class
+                BottledFinale.class,
+                FlashPotion.class
         );
     }
 

@@ -43,5 +43,12 @@
       "Add #b%d #yGrand #yFinale to your hand. #yScry #b%d then draw #b%d cards.",
       "Add #b%d #yGrand #yFinales to your hand. #yScry #b%d then draw #b%d cards."
     ]
+  },
+  "legendarypotions:FlashPotion": {
+    "NAME": "Swords from Sand",
+    "DESCRIPTIONS": [
+      "Discard your hand. Add #b",
+      " upgraded #yFlash #yof #ySteels to your hand for each card discarded."
+    ]
   }
 }
