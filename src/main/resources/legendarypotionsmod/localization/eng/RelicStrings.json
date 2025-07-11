@@ -6,8 +6,8 @@
       "Upon pick up, obtain a random legendary potion."
     ]
   },
-  "legendarypotions:OrangeBeastStatue": {
-    "NAME": "Orange Beast Statue",
+  "legendarypotions:BlueBeastStatue": {
+    "NAME": "Blue Beast Statue",
     "FLAVOR": "White Beast Statue, but with a more refined taste.",
     "DESCRIPTIONS": [
       "Legendary potions always drop after elite combats."
