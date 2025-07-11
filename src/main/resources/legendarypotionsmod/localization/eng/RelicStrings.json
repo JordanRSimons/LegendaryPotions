@@ -1,6 +1,6 @@
 {
-  "legendarypotions:GivePotionC": {
-    "NAME": "Mysterious Jar",
+  "legendarypotions:WitchsTrunk": {
+    "NAME": "Witch's Trunk",
     "FLAVOR": "Flavor text displayed in detailed relic view.",
     "DESCRIPTIONS": [
       "Upon pick up, obtain a random legendary potion."
