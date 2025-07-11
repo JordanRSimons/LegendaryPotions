@@ -11,13 +11,13 @@ import legendarypotionsmod.relics.BaseRelic;
 
 import static legendarypotionsmod.legendarypotions.makeID;
 
-public class NextChestsUC extends BaseRelic {
-    private static final String NAME = "NextChestsUC"; //The name will be used for determining the image file as well as the ID.
+public class WitchsDoll extends BaseRelic {
+    private static final String NAME = "WitchsDoll"; //The name will be used for determining the image file as well as the ID.
     public static final String ID = makeID(NAME); //This adds the mod's prefix to the relic ID, resulting in modID:MyRelic
     private static final AbstractRelic.RelicTier RARITY = RelicTier.UNCOMMON; //The relic's rarity.
     private static final AbstractRelic.LandingSound SOUND = AbstractRelic.LandingSound.CLINK; //The sound played when the relic is clicked.
 
-    public NextChestsUC() {
+    public WitchsDoll() {
         super(ID, NAME, RARITY, SOUND);
         this.counter = 2;
     }

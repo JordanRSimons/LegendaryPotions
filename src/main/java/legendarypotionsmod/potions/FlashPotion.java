@@ -20,12 +20,16 @@ public class FlashPotion extends BasePotion {
     private static final Color SPOTS_COLOR = null;
 
     public FlashPotion() {
-        super(ID, 2, PotionRarity.PLACEHOLDER, PotionSize.S, LIQUID_COLOR, HYBRID_COLOR, SPOTS_COLOR);
+        super(ID, 1, PotionRarity.PLACEHOLDER, PotionSize.S, LIQUID_COLOR, HYBRID_COLOR, SPOTS_COLOR);
     }
 
     @Override
     public String getDescription() {
-        return DESCRIPTIONS[0] + potency + DESCRIPTIONS[1];
+        if (potency == 1) {
+            return DESCRIPTIONS[0] + potency + DESCRIPTIONS[1];
+        } else {
+            return DESCRIPTIONS[0] + potency + DESCRIPTIONS[2];
+        }
     }
 
     @Override

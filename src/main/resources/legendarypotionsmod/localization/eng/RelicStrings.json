@@ -20,11 +20,11 @@
       "Upon pick up, remove ALL potions then gain half as many legendary potions, rounded up."
     ]
   },
-  "legendarypotions:NextChestsUC": {
+  "legendarypotions:WitchsDoll": {
     "NAME": "Witch's Doll",
     "FLAVOR": "When I grow up, I want to get my own cauldron.",
     "DESCRIPTIONS": [
-      "The next #b2 non-Boss chests you open also contain a random legendary potion.",
+      "The next #b2 non-Boss chests you open contain a random legendary potion.",
       "This relic has been used up."
     ]
   },
