@@ -25,11 +25,7 @@ public class FlashPotion extends BasePotion {
 
     @Override
     public String getDescription() {
-        if (potency == 1) {
             return DESCRIPTIONS[0] + potency + DESCRIPTIONS[1];
-        } else {
-            return DESCRIPTIONS[0] + potency + DESCRIPTIONS[2];
-        }
     }
 
     @Override
@@ -42,12 +38,21 @@ public class FlashPotion extends BasePotion {
             // Discard entire hand
             AbstractDungeon.actionManager.addToBottom(new DiscardAction(p, p, handSize, false));
 
-            // Add upgraded Flash of Steels equal to discarded cards
+            // Add 1 upgraded Flash of Steel per discarded card
             for (int i = 0; i < handSize; i++) {
                 FlashOfSteel flashCard = new FlashOfSteel();
                 flashCard.upgrade();
-                AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(flashCard, potency));
+                AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(flashCard, 1));
             }
+
+            // Add additional upgraded Flash of Steels based on potency (1 or 2 more)
+            for (int i = 0; i < potency; i++) {
+                FlashOfSteel flashCard = new FlashOfSteel();
+                flashCard.upgrade();
+                AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(flashCard, 1));
+            }
+
+
         }
     }
 
