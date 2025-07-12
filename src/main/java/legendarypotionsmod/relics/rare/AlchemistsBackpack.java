@@ -24,17 +24,17 @@ public class AlchemistsBackpack extends BaseRelic {
         return DESCRIPTIONS[0];
     }
 
-    private boolean triggeredThisCombat = false;
+    //private boolean triggeredThisCombat = false;
 
-    @Override
-    public void atBattleStart() {
-        triggeredThisCombat = false;
-    }
+    //@Override
+    //public void atBattleStart() {
+        //triggeredThisCombat = false;
+    //}
 
     @Override
     public void onUsePotion() {
-        if (!triggeredThisCombat && AbstractDungeon.getCurrRoom().phase == com.megacrit.cardcrawl.rooms.AbstractRoom.RoomPhase.COMBAT) {
-            triggeredThisCombat = true;
+        if (AbstractDungeon.getCurrRoom().phase == com.megacrit.cardcrawl.rooms.AbstractRoom.RoomPhase.COMBAT) {
+            // triggeredThisCombat = true;
             flash();
             addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
             addToBot(new GainEnergyAction(1));

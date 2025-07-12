@@ -1,28 +1,28 @@
 {
   "legendarypotions:WitchsTrunk": {
     "NAME": "Witch's Trunk",
-    "FLAVOR": "Flavor text displayed in detailed relic view.",
+    "FLAVOR": "Come to my hut in the forest once you're done here and you can have another.",
     "DESCRIPTIONS": [
       "Upon pick up, obtain a random legendary potion."
     ]
   },
   "legendarypotions:BlueBeastStatue": {
     "NAME": "Blue Beast Statue",
-    "FLAVOR": "White Beast Statue, but with a more refined taste.",
+    "FLAVOR": "White Beast Statue, but blue.",
     "DESCRIPTIONS": [
       "Legendary potions always drop after elite combats."
     ]
   },
   "legendarypotions:WitchsWorkbench": {
     "NAME": "Witch's Workbench",
-    "FLAVOR": "This isn't a cauldron, maybe later...",
+    "FLAVOR": "Success rate now officially over 50%! The Merchant doesn't charge enough.",
     "DESCRIPTIONS": [
       "Upon pick up, remove ALL potions then gain half as many legendary potions, rounded up."
     ]
   },
   "legendarypotions:WitchsDoll": {
     "NAME": "Witch's Doll",
-    "FLAVOR": "When I grow up, I want to get my own cauldron.",
+    "FLAVOR": "When I grow up, I want to get my own cauldron...",
     "DESCRIPTIONS": [
       "The next #b2 non-Boss chests you open contain a random legendary potion.",
       "This relic has been used up."
@@ -51,7 +51,7 @@
   },
   "legendarypotions:ExplosivePowder": {
     "NAME": "Explosive Powder",
-    "FLAVOR": "Good for a basic potion.",
+    "FLAVOR": "Someone on Reddit called me the worst potion in the game. I wish they could see this.",
     "DESCRIPTIONS": [
       "Whenever you use a potion, deal #b10 damage to ALL enemies."
     ]
@@ -60,7 +60,7 @@
     "NAME": "Alchemist's Backpack",
     "FLAVOR": "Play Packmaster!",
     "DESCRIPTIONS": [
-      "Whenever you use a potion for the first time each combat, gain [E] and draw #b1 card."
+      "Whenever you use a potion, gain [E] and draw #b1 card."
     ]
   }
 
