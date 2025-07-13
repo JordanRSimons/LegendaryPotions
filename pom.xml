@@ -100,6 +100,13 @@
             <systemPath>${steam.path}/workshop/content/646570/2175759321/betterAltar.jar</systemPath>
         </dependency>
 
+        <dependency>
+            <groupId>BundleCore</groupId>
+            <artifactId>bundlecore</artifactId>
+            <version>6.9.420</version>
+            <scope>system</scope>
+            <systemPath>${steam.path}/workshop/content/646570/2915571146/bundlecore.jar</systemPath>
+        </dependency>
 
     </dependencies>
 

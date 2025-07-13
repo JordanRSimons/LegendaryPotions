@@ -31,11 +31,15 @@ public class LegendaryPotionPool {
 
         // add modded potions to the pool
         if (Loader.isModLoaded("bundle_of_potions")) {//Compatibility blocks...
-            getLegendaryPotions.add(OutsidePotions.getPotionByIndex(0));//Add a switch case for the potion...
+            getLegendaryPotions.add(BundlePotionsPotions.getPotion());
         }
 
         if (Loader.isModLoaded("bundle_of_terra")) {//Compatibility blocks...
-            getLegendaryPotions.add(OutsidePotions.getPotionByIndex(1));//Add a switch case for the potion...
+            getLegendaryPotions.add(TerraPotions.getPotion());
+        }
+
+        if (Loader.isModLoaded("bundle_of_terra")) {//Compatibility blocks...
+            getLegendaryPotions.add(DownfallPotions.getPotion());
         }
 
         /* for (AbstractPotion potion : PotionHelper.getPotionsByRarity(AbstractPotion.PotionRarity.PLACEHOLDER)){//Automated filling method requires manual exceptions in the "excluded" section.

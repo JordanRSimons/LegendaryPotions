@@ -5,7 +5,7 @@ import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rewards.RewardItem;
 import com.megacrit.cardcrawl.rooms.MonsterRoomElite;
-import legendarypotionsmod.potions.OldLegendaryPotionPool;
+import legendarypotionsmod.potions.LegendaryPotionPool;
 import legendarypotionsmod.relics.BaseRelic;
 
 import java.util.ArrayList;
@@ -30,11 +30,11 @@ public class BlueBeastStatue extends BaseRelic {
             }
 
             // Remove all existing potion rewards
-            // AbstractDungeon.getCurrRoom().rewards.removeIf(reward -> reward.type == RewardItem.RewardType.POTION);
+            AbstractDungeon.getCurrRoom().rewards.removeIf(reward -> reward.type == RewardItem.RewardType.POTION);
 
             // Add a legendary potion reward
             try {
-                Class<? extends AbstractPotion> potionClass = OldLegendaryPotionPool.getRandomLegendaryPotion();
+                Class<? extends AbstractPotion> potionClass = LegendaryPotionPool.getRandomLegendaryPotion(null, false);
                 AbstractPotion potion = potionClass.getDeclaredConstructor().newInstance();
                 AbstractDungeon.getCurrRoom().rewards.add(new RewardItem(potion));
             } catch (Exception e) {
