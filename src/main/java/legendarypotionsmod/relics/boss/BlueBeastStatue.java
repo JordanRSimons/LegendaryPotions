@@ -32,14 +32,19 @@ public class BlueBeastStatue extends BaseRelic {
             // Remove all existing potion rewards
             AbstractDungeon.getCurrRoom().rewards.removeIf(reward -> reward.type == RewardItem.RewardType.POTION);
 
+
             // Add a legendary potion reward
-            try {
+
+            AbstractPotion potion = LegendaryPotionPool.getRandomLegendaryPotion(null, false).makeCopy();
+            AbstractDungeon.getCurrRoom().rewards.add(new RewardItem(potion));
+
+            /* try {
                 Class<? extends AbstractPotion> potionClass = LegendaryPotionPool.getRandomLegendaryPotion(null, false);
                 AbstractPotion potion = potionClass.getDeclaredConstructor().newInstance();
                 AbstractDungeon.getCurrRoom().rewards.add(new RewardItem(potion));
             } catch (Exception e) {
                 e.printStackTrace();
-            }
+            } */
 
             // Refresh combat reward screen
             AbstractDungeon.combatRewardScreen.rewards = AbstractDungeon.getCurrRoom().rewards;

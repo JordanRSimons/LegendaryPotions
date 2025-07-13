@@ -49,7 +49,7 @@ public class LegendaryPotionPool {
         } */
     }
 
-    public AbstractPotion getRandomLegendaryPotion(Random rng, boolean limited) {//This allows items to use the appropriate RnG rolls, so events and relics can use their respective RnG option.
+    public static AbstractPotion getRandomLegendaryPotion(Random rng, boolean limited) {//This allows items to use the appropriate RnG rolls, so events and relics can use their respective RnG option.
         if (rng == null){//Extra option for truly random legendary potions, this includes your healing rarity potions if set to false, useful for events!
             return AbstractDungeon.returnRandomPotion(AbstractPotion.PotionRarity.PLACEHOLDER, limited);
         }
