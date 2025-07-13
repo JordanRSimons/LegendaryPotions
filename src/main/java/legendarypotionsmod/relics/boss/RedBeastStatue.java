@@ -1,11 +1,10 @@
 package legendarypotionsmod.relics.boss;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
-import legendarypotionsmod.potions.LegendaryPotionPool;
+import legendarypotionsmod.potions.OldLegendaryPotionPool;
 import legendarypotionsmod.relics.BaseRelic;
 
 import static legendarypotionsmod.legendarypotions.makeID;
@@ -70,7 +69,7 @@ public class RedBeastStatue extends BaseRelic {
                 @Override
                 public void update() {
                     try {
-                        Class<? extends AbstractPotion> potionClass = LegendaryPotionPool.getRandomLegendaryPotion();
+                        Class<? extends AbstractPotion> potionClass = OldLegendaryPotionPool.getRandomLegendaryPotion();
                         AbstractPotion potion = potionClass.getDeclaredConstructor().newInstance();
                         potion.use(AbstractDungeon.player);
 

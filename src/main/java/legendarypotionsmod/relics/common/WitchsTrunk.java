@@ -3,7 +3,7 @@ package legendarypotionsmod.relics.common;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
-import legendarypotionsmod.potions.LegendaryPotionPool;
+import legendarypotionsmod.potions.OldLegendaryPotionPool;
 import legendarypotionsmod.relics.BaseRelic;
 
 import static legendarypotionsmod.legendarypotions.makeID;
@@ -21,7 +21,7 @@ public class WitchsTrunk extends BaseRelic {
     @Override
     public void onEquip() {
         try {
-            Class<? extends AbstractPotion> potionClass = LegendaryPotionPool.getRandomLegendaryPotion();
+            Class<? extends AbstractPotion> potionClass = OldLegendaryPotionPool.getRandomLegendaryPotion();
             AbstractPotion potion = potionClass.getDeclaredConstructor().newInstance();
             AbstractDungeon.player.obtainPotion(potion);
         } catch (Exception e) {

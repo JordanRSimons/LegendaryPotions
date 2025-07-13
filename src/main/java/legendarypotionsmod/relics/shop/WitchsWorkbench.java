@@ -3,7 +3,7 @@ package legendarypotionsmod.relics.shop;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
-import legendarypotionsmod.potions.LegendaryPotionPool;
+import legendarypotionsmod.potions.OldLegendaryPotionPool;
 import legendarypotionsmod.relics.BaseRelic;
 
 import java.util.ArrayList;
@@ -41,7 +41,7 @@ public class WitchsWorkbench extends BaseRelic {
 
         for (int i = 0; i < legendaryCount; i++) {
             try {
-                Class<? extends AbstractPotion> potionClass = LegendaryPotionPool.getRandomLegendaryPotion();
+                Class<? extends AbstractPotion> potionClass = OldLegendaryPotionPool.getRandomLegendaryPotion();
                 AbstractPotion newPotion = potionClass.getDeclaredConstructor().newInstance();
                 AbstractDungeon.player.obtainPotion(newPotion);
             } catch (Exception e) {
