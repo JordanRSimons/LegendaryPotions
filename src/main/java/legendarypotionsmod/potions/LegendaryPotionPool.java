@@ -38,7 +38,11 @@ public class LegendaryPotionPool {
             getLegendaryPotions.add(TerraPotions.getPotion());
         }
 
-        if (Loader.isModLoaded("bundle_of_terra")) {//Compatibility blocks...
+        if (Loader.isModLoaded("downfall")) {//Compatibility blocks...
+            getLegendaryPotions.add(DownfallPotions.getPotion());
+        }
+
+        if (Loader.isModLoaded("betterAltar")) {//Compatibility blocks...
             getLegendaryPotions.add(DownfallPotions.getPotion());
         }
 
