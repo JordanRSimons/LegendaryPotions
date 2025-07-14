@@ -33,7 +33,8 @@
     "NAME": "Red Beast Statue",
     "FLAVOR": "White Beast Statue was told he can't be a boss relic. He's angry now.",
     "DESCRIPTIONS": [
-      "Use a random legendary potion at the start of each combat. Lose [E] at the start of each turn."
+      "Use a random legendary potion at the start of each combat. Lose [E] at the start of each turn.",
+      "Energy or Potions?"
     ]
   },
   "legendarypotions:DrinkTicket": {

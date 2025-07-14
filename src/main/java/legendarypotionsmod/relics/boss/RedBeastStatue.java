@@ -44,21 +44,39 @@ public class RedBeastStatue extends BaseRelic {
         }
     } */
 
+    private boolean cardsReceived = true;
+
     // Reduces total energy to 2 and gives Sozu
     @Override
     public void onEquip() {
         AbstractDungeon.player.energy.energyMaster--;
-
-
-        AbstractRelic sozu = new Sozu();
-        //AbstractDungeon.player.relics.add(sozu);
-        sozu.instantObtain(AbstractDungeon.player, AbstractDungeon.player.relics.size(), true);
-
+        this.cardsReceived = false;
     }
 
     @Override
     public void onUnequip() {
         AbstractDungeon.player.energy.energyMaster++;
+    }
+
+    // calling bell reward screen code
+    @Override
+    public void update() {
+        super.update();
+
+        if (!this.cardsReceived && !AbstractDungeon.isScreenUp) {
+            AbstractDungeon.combatRewardScreen.open();
+            AbstractDungeon.combatRewardScreen.rewards.clear();
+
+            // Grant Sozu as the only reward
+            AbstractRelic sozu = new Sozu();
+            AbstractDungeon.combatRewardScreen.rewards.add(new RewardItem(sozu));
+
+            AbstractDungeon.combatRewardScreen.positionRewards();
+            AbstractDungeon.overlayMenu.proceedButton.setLabel(this.DESCRIPTIONS[1]);
+
+            this.cardsReceived = true;
+            AbstractDungeon.getCurrRoom().rewardPopOutTimer = 0.25f;
+        }
     }
 
 
