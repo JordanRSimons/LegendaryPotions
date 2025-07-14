@@ -9,9 +9,10 @@ public class BundlePotionsPotions {
         try {
             return new Test448();
         } catch (Exception ignored) {//We use "Exception" because the above thing actually throws multiple different exceptions all at once if it does not exist. NPE, NotFound, ect.
-        } finally {
-            return new FirePotion();//If potion no longer exists, use backup.
         }
+
+        return new FirePotion();//If potion no longer exists, use backup.
+
     }
 }
 

@@ -31,19 +31,28 @@ public class LegendaryPotionPool {
 
         // add modded potions to the pool
         if (Loader.isModLoaded("bundle_of_potions")) {//Compatibility blocks...
+            System.out.println("LOOK HERE: Loading B of P");
             getLegendaryPotions.add(BundlePotionsPotions.getPotion());
         }
 
-        if (Loader.isModLoaded("bundle_of_terra")) {//Compatibility blocks...
+        if (Loader.isModLoaded("Bundle_Of_Terra")) {//Compatibility blocks...
+            System.out.println("LOOK HERE: Loading B of Ter");
             getLegendaryPotions.add(TerraPotions.getPotion());
         }
 
         if (Loader.isModLoaded("downfall")) {//Compatibility blocks...
+            System.out.println("LOOK HERE: Loading downfall");
             getLegendaryPotions.add(DownfallPotions.getPotion());
         }
 
         if (Loader.isModLoaded("betterAltar")) {//Compatibility blocks...
+            System.out.println("LOOK HERE: Loading downfall");
             getLegendaryPotions.add(DownfallPotions.getPotion());
+        }
+
+        System.out.println(">>> LegendaryPotionPool contents:");
+        for (AbstractPotion potion : getLegendaryPotions) {
+            System.out.println(" - " + potion.ID + " (" + potion.getClass().getSimpleName() + ")");
         }
 
         /* for (AbstractPotion potion : PotionHelper.getPotionsByRarity(AbstractPotion.PotionRarity.PLACEHOLDER)){//Automated filling method requires manual exceptions in the "excluded" section.
