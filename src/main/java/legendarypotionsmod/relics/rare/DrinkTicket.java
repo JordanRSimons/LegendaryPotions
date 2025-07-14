@@ -42,6 +42,6 @@ public class DrinkTicket extends BaseRelic {
 
     @Override
     public boolean canSpawn() {
-        return (com.megacrit.cardcrawl.core.Settings.isEndless || AbstractDungeon.floorNum <= 48);
+        return (com.megacrit.cardcrawl.core.Settings.isEndless || AbstractDungeon.floorNum <= 34);
     }
 }

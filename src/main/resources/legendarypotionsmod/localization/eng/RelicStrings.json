@@ -40,7 +40,7 @@
     "NAME": "Drink Ticket",
     "FLAVOR": "The Merchant has startlingly good taste.",
     "DESCRIPTIONS": [
-      "Whenever you enter a shop room, lose #b50 #yGold and obtain a random legendary potion."
+      "Whenever you enter a shop room, obtain a random legendary potion."
     ]
   },
   "legendarypotions:LeadBlock": {
