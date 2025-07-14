@@ -4,6 +4,7 @@ import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.potions.PotionSlot;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import legendarypotionsmod.relics.BaseRelic;
 
@@ -24,6 +25,12 @@ public class AlchemistsBackpack extends BaseRelic {
         return DESCRIPTIONS[0];
     }
 
+    @Override
+    public void onEquip() {
+        AbstractDungeon.player.potionSlots += 1;
+        AbstractDungeon.player.potions.add(new PotionSlot(AbstractDungeon.player.potionSlots - 1));
+    }
+
     //private boolean triggeredThisCombat = false;
 
     //@Override
@@ -38,7 +45,7 @@ public class AlchemistsBackpack extends BaseRelic {
             flash();
             addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
             addToBot(new GainEnergyAction(1));
-            addToBot(new DrawCardAction(1));
+            addToBot(new DrawCardAction(2));
         }
     }
 }

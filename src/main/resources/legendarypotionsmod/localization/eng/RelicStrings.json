@@ -3,7 +3,7 @@
     "NAME": "Witch's Trunk",
     "FLAVOR": "Come to my hut in the forest once you're done here and you can have another.",
     "DESCRIPTIONS": [
-      "Upon pick up, obtain a random legendary potion."
+      "Upon pickup, obtain a random legendary potion."
     ]
   },
   "legendarypotions:BlueBeastStatue": {
@@ -47,7 +47,7 @@
     "NAME": "Lead Block",
     "FLAVOR": "They said we could make gold from lead...",
     "DESCRIPTIONS": [
-      "Whenever you use a potion, gain #b15 #yGold."
+      "Whenever you use a potion, gain #b20 #yGold."
     ]
   },
   "legendarypotions:ExplosivePowder": {
@@ -61,7 +61,7 @@
     "NAME": "Alchemist's Backpack",
     "FLAVOR": "Play Packmaster!",
     "DESCRIPTIONS": [
-      "Whenever you use a potion, gain [E] and draw #b1 card."
+      "Upon pickup, gain #b1 potion slot. Whenever you use a potion, gain [E] and draw #b2 cards."
     ]
   }
 
