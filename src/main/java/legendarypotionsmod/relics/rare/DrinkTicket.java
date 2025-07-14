@@ -4,9 +4,11 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.ShopRoom;
+import legendarypotionsmod.potions.LegendaryPotionPool;
 import legendarypotionsmod.potions.OldLegendaryPotionPool;
 import legendarypotionsmod.relics.BaseRelic;
 
+import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.relicRng;
 import static legendarypotionsmod.legendarypotions.makeID;
 
 public class DrinkTicket extends BaseRelic {
@@ -30,15 +32,11 @@ public class DrinkTicket extends BaseRelic {
             flash();
 
             // Subtract 50 gold, but don't let gold go negative
-            AbstractDungeon.player.gold = Math.max(0, AbstractDungeon.player.gold - 50);
+            // AbstractDungeon.player.gold = Math.max(0, AbstractDungeon.player.gold - 50);
 
-            try {
-                Class<? extends AbstractPotion> potionClass = OldLegendaryPotionPool.getRandomLegendaryPotion();
-                AbstractPotion potion = potionClass.getDeclaredConstructor().newInstance();
-                AbstractDungeon.player.obtainPotion(potion);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+            LegendaryPotionPool.loadPool();
+            AbstractPotion potion = LegendaryPotionPool.getRandomLegendaryPotion(relicRng, false).makeCopy();
+            AbstractDungeon.player.obtainPotion(potion);
         }
     }
 

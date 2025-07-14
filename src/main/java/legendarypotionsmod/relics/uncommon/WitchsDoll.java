@@ -6,9 +6,11 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import legendarypotionsmod.potions.LegendaryPotionPool;
 import legendarypotionsmod.potions.OldLegendaryPotionPool;
 import legendarypotionsmod.relics.BaseRelic;
 
+import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.relicRng;
 import static legendarypotionsmod.legendarypotions.makeID;
 
 public class WitchsDoll extends BaseRelic {
@@ -35,13 +37,10 @@ public class WitchsDoll extends BaseRelic {
             AbstractPlayer p = AbstractDungeon.player;
             addToTop(new RelicAboveCreatureAction(p, this));
 
-            try {
-                Class<? extends AbstractPotion> potionClass = OldLegendaryPotionPool.getRandomLegendaryPotion();
-                AbstractPotion potion = potionClass.getDeclaredConstructor().newInstance();
-                AbstractDungeon.getCurrRoom().addPotionToRewards(potion);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+
+            LegendaryPotionPool.loadPool();
+            AbstractPotion potion = LegendaryPotionPool.getRandomLegendaryPotion(relicRng, false).makeCopy();
+            AbstractDungeon.getCurrRoom().addPotionToRewards(potion);
 
             // Update description and used-up state
             if (this.counter == 0) {
