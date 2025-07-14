@@ -17,7 +17,8 @@
     "NAME": "Witch's Workbench",
     "FLAVOR": "Success rate now officially over 50%! The Merchant doesn't charge enough.",
     "DESCRIPTIONS": [
-      "Upon pick up, remove ALL potions then gain half as many legendary potions, rounded up."
+      "Upon pickup, brews #b2 legendary potions.",
+      "Woah... LEGENDARY!"
     ]
   },
   "legendarypotions:WitchsDoll": {

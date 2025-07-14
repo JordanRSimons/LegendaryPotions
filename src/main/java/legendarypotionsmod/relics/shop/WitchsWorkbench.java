@@ -2,7 +2,9 @@ package legendarypotionsmod.relics.shop;
 
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
+import com.megacrit.cardcrawl.potions.FirePotion;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.rewards.RewardItem;
 import legendarypotionsmod.potions.LegendaryPotionPool;
 import legendarypotionsmod.potions.OldLegendaryPotionPool;
 import legendarypotionsmod.relics.BaseRelic;
@@ -22,7 +24,46 @@ public class WitchsWorkbench extends BaseRelic {
         super(ID, NAME, RARITY, SOUND);
     }
 
+
     @Override
+    public void onEquip() {
+        LegendaryPotionPool.loadPool();
+        AbstractPotion legendaryPotion1 = LegendaryPotionPool.getRandomLegendaryPotion(relicRng, false).makeCopy();
+        AbstractPotion legendaryPotion2 = LegendaryPotionPool.getRandomLegendaryPotion(relicRng, false).makeCopy();
+
+        // Add both potions to the current room’s rewards
+        AbstractDungeon.getCurrRoom().addPotionToRewards(legendaryPotion1);
+        AbstractDungeon.getCurrRoom().addPotionToRewards(legendaryPotion2);
+
+
+        AbstractDungeon.combatRewardScreen.open(this.DESCRIPTIONS[1]);
+        (AbstractDungeon.getCurrRoom()).rewardPopOutTimer = 0.0F;
+
+        // card rewards gone
+        int remove = -1;
+        for (int i = 0; i < AbstractDungeon.combatRewardScreen.rewards.size(); i++) {
+            RewardItem item = AbstractDungeon.combatRewardScreen.rewards.get(i);
+            if (item.type == RewardItem.RewardType.CARD) {
+                remove = i;
+                break;
+            }
+        }
+        if (remove != -1) {
+            AbstractDungeon.combatRewardScreen.rewards.remove(remove);
+        }
+
+    }
+
+
+
+    @Override
+    public String getUpdatedDescription() {
+        return DESCRIPTIONS[0];
+    }
+
+
+    // old effect
+    /* @Override
     public void onEquip() {
         ArrayList<AbstractPotion> potionsToReplace = new ArrayList<>();
 
@@ -46,12 +87,9 @@ public class WitchsWorkbench extends BaseRelic {
             AbstractPotion potion = LegendaryPotionPool.getRandomLegendaryPotion(relicRng, false).makeCopy();
             AbstractDungeon.player.obtainPotion(potion);
         }
-    }
+    } */
 
-    @Override
-    public String getUpdatedDescription() {
-        return DESCRIPTIONS[0];
-    }
+
 
 
 }
