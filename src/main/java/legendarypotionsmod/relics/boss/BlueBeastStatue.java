@@ -31,7 +31,7 @@ public class BlueBeastStatue extends BaseRelic {
             }
 
             // Remove all existing potion rewards
-            AbstractDungeon.getCurrRoom().rewards.removeIf(reward -> reward.type == RewardItem.RewardType.POTION);
+            // AbstractDungeon.getCurrRoom().rewards.removeIf(reward -> reward.type == RewardItem.RewardType.POTION);
 
 
             // Add a legendary potion reward

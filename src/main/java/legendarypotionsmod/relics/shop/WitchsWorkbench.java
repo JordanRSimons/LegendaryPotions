@@ -6,7 +6,6 @@ import com.megacrit.cardcrawl.potions.FirePotion;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rewards.RewardItem;
 import legendarypotionsmod.potions.LegendaryPotionPool;
-import legendarypotionsmod.potions.OldLegendaryPotionPool;
 import legendarypotionsmod.relics.BaseRelic;
 
 import java.util.ArrayList;

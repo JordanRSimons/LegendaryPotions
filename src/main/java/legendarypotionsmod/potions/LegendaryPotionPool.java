@@ -12,10 +12,10 @@ public class LegendaryPotionPool {
     // included potion list
     public static ArrayList<AbstractPotion> getLegendaryPotions = new ArrayList<AbstractPotion>();
 
-    private static final ArrayList<String> excluded = new ArrayList<String>(){{
-        add(OmniscientPotion.ID); //Hardcoded method - Use for potions from this mod.
-        add("bundle_of_potions:Test448"); //Use strings with the full ID for other mods, even if you import them to manually add stuff you cant put loader checks in this list creator.
-    }};
+    //private static final ArrayList<String> excluded = new ArrayList<String>(){{
+        //add(OmniscientPotion.ID); //Hardcoded method - Use for potions from this mod.
+       // add("bundle_of_potions:Test448"); //Use strings with the full ID for other mods, even if you import them to manually add stuff you cant put loader checks in this list creator.
+    //}};
 
     public static void loadPool(){
         getLegendaryPotions.clear();//Ensure it is cleaned up incase items are accidentally being lost somewhere.
@@ -31,29 +31,29 @@ public class LegendaryPotionPool {
 
         // add modded potions to the pool
         if (Loader.isModLoaded("bundle_of_potions")) {//Compatibility blocks...
-            System.out.println("LOOK HERE: Loading B of P");
+            //System.out.println("LOOK HERE: Loading B of P");
             getLegendaryPotions.add(BundlePotionsPotions.getPotion());
         }
 
         if (Loader.isModLoaded("Bundle_Of_Terra")) {//Compatibility blocks...
-            System.out.println("LOOK HERE: Loading B of Ter");
+            //System.out.println("LOOK HERE: Loading B of Ter");
             getLegendaryPotions.add(TerraPotions.getPotion());
         }
 
         if (Loader.isModLoaded("downfall")) {//Compatibility blocks...
-            System.out.println("LOOK HERE: Loading downfall");
+            //System.out.println("LOOK HERE: Loading downfall");
             getLegendaryPotions.add(DownfallPotions.getPotion());
         }
 
         if (Loader.isModLoaded("betterAltar")) {//Compatibility blocks...
-            System.out.println("LOOK HERE: Loading downfall");
+            //System.out.println("LOOK HERE: Loading downfall");
             getLegendaryPotions.add(DownfallPotions.getPotion());
         }
 
-        System.out.println(">>> LegendaryPotionPool contents:");
-        for (AbstractPotion potion : getLegendaryPotions) {
-            System.out.println(" - " + potion.ID + " (" + potion.getClass().getSimpleName() + ")");
-        }
+//        System.out.println(">>> LegendaryPotionPool contents:");
+//        for (AbstractPotion potion : getLegendaryPotions) {
+//            System.out.println(" - " + potion.ID + " (" + potion.getClass().getSimpleName() + ")");
+//        }
 
         /* for (AbstractPotion potion : PotionHelper.getPotionsByRarity(AbstractPotion.PotionRarity.PLACEHOLDER)){//Automated filling method requires manual exceptions in the "excluded" section.
             if (!excluded.contains(potion.ID)){//If the potion is not on the list of naughty things we don't want...

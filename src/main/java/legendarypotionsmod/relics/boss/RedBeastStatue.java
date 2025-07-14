@@ -5,7 +5,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import legendarypotionsmod.potions.LegendaryPotionPool;
-import legendarypotionsmod.potions.OldLegendaryPotionPool;
+import legendarypotionsmod.potions.RedBeastPotionPool;
 import legendarypotionsmod.relics.BaseRelic;
 
 import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.relicRng;
@@ -70,8 +70,8 @@ public class RedBeastStatue extends BaseRelic {
             AbstractDungeon.actionManager.addToBottom(new AbstractGameAction() {
                 @Override
                 public void update() {
-                    LegendaryPotionPool.loadPool();
-                    AbstractPotion potion = LegendaryPotionPool.getRandomLegendaryPotion(relicRng, false).makeCopy();
+                    RedBeastPotionPool.loadPool();
+                    AbstractPotion potion = RedBeastPotionPool.getRandomLegendaryPotion(relicRng, false).makeCopy();
                     potion.use(AbstractDungeon.player);
 
                     // Trigger relic onUsePotion effects
