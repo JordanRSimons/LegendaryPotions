@@ -25,6 +25,10 @@ public class LeadBlock extends BaseRelic {
         return DESCRIPTIONS[0];
     }
 
+    public AbstractRelic makeCopy() {
+        return new LeadBlock();
+    }
+
     @Override
     public void onUsePotion() {
         flash(); // Visual effect

@@ -25,6 +25,10 @@ public class DrinkTicket extends BaseRelic {
         return this.DESCRIPTIONS[0];
     }
 
+    public AbstractRelic makeCopy() {
+        return new DrinkTicket();
+    }
+
     @Override
     public void onEnterRoom(com.megacrit.cardcrawl.rooms.AbstractRoom room) {
         if (room instanceof ShopRoom) {

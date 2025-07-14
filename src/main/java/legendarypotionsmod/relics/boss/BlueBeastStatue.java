@@ -58,4 +58,8 @@ public class BlueBeastStatue extends BaseRelic {
     public String getUpdatedDescription() {
         return DESCRIPTIONS[0];
     }
+
+    public AbstractRelic makeCopy() {
+        return new BlueBeastStatue();
+    }
 }

@@ -28,6 +28,10 @@ public class WitchsDoll extends BaseRelic {
         return this.DESCRIPTIONS[0];
     }
 
+    public AbstractRelic makeCopy() {
+        return new WitchsDoll();
+    }
+
     @Override
     public void onChestOpen(boolean bossChest) {
         if (!bossChest && this.counter > 0) {

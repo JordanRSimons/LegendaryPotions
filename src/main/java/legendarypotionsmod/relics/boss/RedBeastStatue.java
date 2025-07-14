@@ -52,6 +52,9 @@ public class RedBeastStatue extends BaseRelic {
         AbstractDungeon.player.energy.energyMaster++;
     }
 
+    // Give a Sozu
+
+
 
     private boolean pendingPotion = false; // Flag to delay potion use
 
@@ -89,5 +92,9 @@ public class RedBeastStatue extends BaseRelic {
     @Override
     public String getUpdatedDescription() {
         return DESCRIPTIONS[0];
+    }
+
+    public AbstractRelic makeCopy() {
+        return new RedBeastStatue();
     }
 }

@@ -25,6 +25,10 @@ public class AlchemistsBackpack extends BaseRelic {
         return DESCRIPTIONS[0];
     }
 
+    public AbstractRelic makeCopy() {
+        return new AlchemistsBackpack();
+    }
+
     @Override
     public void onEquip() {
         AbstractDungeon.player.potionSlots += 1;

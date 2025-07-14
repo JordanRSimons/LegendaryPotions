@@ -24,6 +24,10 @@ public class ExplosivePowder extends BaseRelic {
         return DESCRIPTIONS[0];
     }
 
+    public AbstractRelic makeCopy() {
+        return new ExplosivePowder();
+    }
+
     @Override
     public void onUsePotion() {
         if (AbstractDungeon.getCurrRoom().phase == com.megacrit.cardcrawl.rooms.AbstractRoom.RoomPhase.COMBAT) {

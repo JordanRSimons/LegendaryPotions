@@ -60,6 +60,10 @@ public class WitchsWorkbench extends BaseRelic {
         return DESCRIPTIONS[0];
     }
 
+    public AbstractRelic makeCopy() {
+        return new WitchsWorkbench();
+    }
+
 
     // old effect
     /* @Override
