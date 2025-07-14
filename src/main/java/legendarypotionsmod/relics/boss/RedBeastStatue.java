@@ -64,7 +64,7 @@ public class RedBeastStatue extends BaseRelic {
         super.update();
 
         if (!this.cardsReceived && !AbstractDungeon.isScreenUp) {
-            AbstractDungeon.combatRewardScreen.open();
+            AbstractDungeon.combatRewardScreen.open(this.DESCRIPTIONS[1]);
             AbstractDungeon.combatRewardScreen.rewards.clear();
 
             // Grant Sozu as the only reward
@@ -72,7 +72,7 @@ public class RedBeastStatue extends BaseRelic {
             AbstractDungeon.combatRewardScreen.rewards.add(new RewardItem(sozu));
 
             AbstractDungeon.combatRewardScreen.positionRewards();
-            AbstractDungeon.overlayMenu.proceedButton.setLabel(this.DESCRIPTIONS[1]);
+            //AbstractDungeon.overlayMenu.proceedButton.setLabel(this.DESCRIPTIONS[2]);
 
             this.cardsReceived = true;
             AbstractDungeon.getCurrRoom().rewardPopOutTimer = 0.25f;
