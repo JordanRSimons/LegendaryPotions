@@ -10,6 +10,7 @@ import legendarypotionsmod.relics.BaseRelic;
 
 import java.util.ArrayList;
 
+import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.relicRng;
 import static legendarypotionsmod.legendarypotions.makeID;
 
 public class BlueBeastStatue extends BaseRelic {
@@ -34,8 +35,8 @@ public class BlueBeastStatue extends BaseRelic {
 
 
             // Add a legendary potion reward
-
-            AbstractPotion potion = LegendaryPotionPool.getRandomLegendaryPotion(null, false).makeCopy();
+            LegendaryPotionPool.loadPool();
+            AbstractPotion potion = LegendaryPotionPool.getRandomLegendaryPotion(relicRng, false).makeCopy();
             AbstractDungeon.getCurrRoom().rewards.add(new RewardItem(potion));
 
             /* try {

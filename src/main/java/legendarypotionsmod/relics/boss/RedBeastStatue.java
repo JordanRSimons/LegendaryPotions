@@ -4,9 +4,11 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import legendarypotionsmod.potions.LegendaryPotionPool;
 import legendarypotionsmod.potions.OldLegendaryPotionPool;
 import legendarypotionsmod.relics.BaseRelic;
 
+import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.relicRng;
 import static legendarypotionsmod.legendarypotions.makeID;
 
 public class RedBeastStatue extends BaseRelic {
@@ -68,19 +70,16 @@ public class RedBeastStatue extends BaseRelic {
             AbstractDungeon.actionManager.addToBottom(new AbstractGameAction() {
                 @Override
                 public void update() {
-                    try {
-                        Class<? extends AbstractPotion> potionClass = OldLegendaryPotionPool.getRandomLegendaryPotion();
-                        AbstractPotion potion = potionClass.getDeclaredConstructor().newInstance();
-                        potion.use(AbstractDungeon.player);
+                    LegendaryPotionPool.loadPool();
+                    AbstractPotion potion = LegendaryPotionPool.getRandomLegendaryPotion(relicRng, false).makeCopy();
+                    potion.use(AbstractDungeon.player);
 
-                        // Trigger relic onUsePotion effects
-                        for (AbstractRelic relic : AbstractDungeon.player.relics) {
-                            relic.onUsePotion();
-                        }
-
-                    } catch (Exception e) {
-                        e.printStackTrace();
+                    // Trigger relic onUsePotion effects
+                    for (AbstractRelic relic : AbstractDungeon.player.relics) {
+                        relic.onUsePotion();
                     }
+
+
                     isDone = true;
                 }
             });
