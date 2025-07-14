@@ -1,9 +1,12 @@
 package legendarypotionsmod.relics.boss;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.relics.Sozu;
+import com.megacrit.cardcrawl.rewards.RewardItem;
 import legendarypotionsmod.potions.LegendaryPotionPool;
 import legendarypotionsmod.potions.RedBeastPotionPool;
 import legendarypotionsmod.relics.BaseRelic;
@@ -41,10 +44,16 @@ public class RedBeastStatue extends BaseRelic {
         }
     } */
 
-    // Reduces total energy to 2
+    // Reduces total energy to 2 and gives Sozu
     @Override
     public void onEquip() {
         AbstractDungeon.player.energy.energyMaster--;
+
+
+        AbstractRelic sozu = new Sozu();
+        //AbstractDungeon.player.relics.add(sozu);
+        sozu.instantObtain(AbstractDungeon.player, AbstractDungeon.player.relics.size(), true);
+
     }
 
     @Override
@@ -52,7 +61,8 @@ public class RedBeastStatue extends BaseRelic {
         AbstractDungeon.player.energy.energyMaster++;
     }
 
-    // Give a Sozu
+
+
 
 
 
