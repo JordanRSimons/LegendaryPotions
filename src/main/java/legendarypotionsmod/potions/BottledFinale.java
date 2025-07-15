@@ -79,7 +79,7 @@ public class BottledFinale extends BasePotion {
     @Override
     public void addAdditionalTips() {
 
-        // Tooltip for Scry
+        // Tooltip for Scry.
         this.tips.add(new PowerTip(
                 TipHelper.capitalize(GameDictionary.SCRY.NAMES[0]),
                 GameDictionary.keywords.get(GameDictionary.SCRY.NAMES[0])
