@@ -51,8 +51,10 @@ public class BottledEntropy extends BasePotion {
     public void use(AbstractCreature target) {
         AbstractPlayer p = AbstractDungeon.player;
 
-        int maxSlots = 5;
-        int slotsToAdd = Math.min(potency, maxSlots - p.potionSlots);
+        //int maxSlots = 5;
+        //int slotsToAdd = Math.min(potency, maxSlots - p.potionSlots);
+
+        int slotsToAdd = potency;
 
         if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
             if (slotsToAdd > 0) {

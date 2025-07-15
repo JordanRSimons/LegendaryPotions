@@ -26,8 +26,8 @@
     "NAME": "Evanescent Entropy",
     "DESCRIPTIONS": [
       "While in combat, gain #b",
-      " potion slot (up to a maximum of five) then fill all your empty potion slots with random potions.",
-      " potion slots (up to a maximum of five) then fill all your empty potion slots with random potions."
+      " potion slot then fill all your empty potion slots with random potions.",
+      " potion slots then fill all your empty potion slots with random potions."
     ]
   },
   "legendarypotions:OmniscientPotion": {
@@ -40,8 +40,8 @@
   "legendarypotions:BottledFinale": {
     "NAME": "Essence of the End",
     "DESCRIPTIONS": [
-      "Add #b%d #yGrand #yFinale to your hand. #yScry #b%d then draw #b%d cards.",
-      "Add #b%d #yGrand #yFinales to your hand. #yScry #b%d then draw #b%d cards."
+      "Add #b%d upgraded #yGrand #yFinale and #b%d #yWell #yLaid #yPlans to your hand. They cost #b0 this turn. #yScry #b%d.",
+      "Add #b%d upgraded #yGrand #yFinales and #b%d #yWell #yLaid #yPlans to your hand. They cost #b0 this turn. #yScry #b%d."
     ]
   },
   "legendarypotions:FlashPotion": {

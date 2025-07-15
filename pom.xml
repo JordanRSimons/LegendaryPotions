@@ -24,7 +24,7 @@
 
     <!-- This information will be displayed in ModTheSpire, the modded launcher. -->
     <name>Legendary Potions</name>
-    <version>1.0.0</version>
+    <version>1.1.0</version>
     <!-- Avoid using \ in this description, as they can cause the description to fail to load. -->
     <!-- If you really want to use them, you'll need to "escape" them by putting another one in front, like \\ -->
     <description>This mod adds 6 powerful legendary potions to the game. They are not found in normal combat rewards or the shop and are exclusively available through 6 new relics (common, uncommon, rare, shop, 2X boss). The mod also adds 3 additional relics (common, uncommon, rare) which provide general potion support.</description>

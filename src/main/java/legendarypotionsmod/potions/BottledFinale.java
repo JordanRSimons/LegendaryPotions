@@ -1,5 +1,6 @@
 package legendarypotionsmod.potions;
 
+import basemod.helpers.CardModifierManager;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
@@ -7,6 +8,7 @@ import com.megacrit.cardcrawl.actions.utility.ScryAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.green.GrandFinale;
+import com.megacrit.cardcrawl.cards.green.WellLaidPlans;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -15,6 +17,7 @@ import com.megacrit.cardcrawl.helpers.GameDictionary;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import expansioncontent.cardmods.RetainCardMod;
 
 import static legendarypotionsmod.legendarypotions.makeID;
 
@@ -38,9 +41,9 @@ public class BottledFinale extends BasePotion {
     public String getDescription() {
         // Use plural description when potency > 1
         if (potency == 1) {
-            return String.format(DESCRIPTIONS[0], potency, 10 * potency, 2 * potency);
+            return String.format(DESCRIPTIONS[0], potency, potency, 10 * potency);
         } else {
-            return String.format(DESCRIPTIONS[1], potency, 10 * potency, 2 * potency);
+            return String.format(DESCRIPTIONS[1], potency, potency, 10 * potency);
         }
     }
 
@@ -51,8 +54,17 @@ public class BottledFinale extends BasePotion {
 
             // Add potency copies of Grand Finale to your hand (unupgraded)
             for (int i = 0; i < potency; i++) {
-                AbstractCard card = new GrandFinale();
-                addToBot(new MakeTempCardInHandAction(card, 1));
+                AbstractCard finale = new GrandFinale();
+                finale.upgrade();
+
+                AbstractCard plans = new WellLaidPlans();
+                plans.setCostForTurn(0);
+
+                // Apply actual retain behavior via BaseMod
+                //CardModifierManager.addModifier(finale, new RetainCardMod());
+
+                addToBot(new MakeTempCardInHandAction(finale, 1));
+                addToBot(new MakeTempCardInHandAction(plans, 1));
             }
 
             // Delay before scry+draw
@@ -60,7 +72,7 @@ public class BottledFinale extends BasePotion {
 
             // Scry then draw
             addToBot(new ScryAction(10 * potency));
-            addToBot(new DrawCardAction(p, 2 * potency));
+            //addToBot(new DrawCardAction(p, 2 * potency));
         }
     }
 
